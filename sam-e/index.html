@@ -48,7 +48,7 @@
     /* HERO */
     .hero { background: #ffffff; color: var(--text); padding: 72px 20px 80px; position: relative; overflow: hidden; border-bottom: 1px solid #EDF0F5; }
     .hero::before { display: none; }
-    .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: center; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 460px; gap: 52px; align-items: center; }
     .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: #EEF5FF; border: 1px solid #C8DDF5; border-radius: 40px; padding: 6px 16px; font-size: 11px; font-weight: 600; color: #3D7FBF; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px; }
     .hero-heading { font-family: var(--ff-display); font-size: clamp(30px, 4vw, 48px); font-weight: 900; line-height: 1.12; margin-bottom: 20px; color: var(--navy); }
     .hero-heading em { color: #2670B8; font-style: normal; }
@@ -210,6 +210,7 @@
     @media (max-width: 768px) {
       .nav-trust { display: none; }
       .hero-inner { grid-template-columns: 1fr; }
+      .hero-inner > div:last-child { order: -1; }
       .ps-grid, .steps-grid, .benefits-grid, .reviews-grid, .athlete-wrap { grid-template-columns: 1fr; }
       .cert-grid { grid-template-columns: repeat(2, 1fr); }
       .research-grid { grid-template-columns: 1fr; gap: 2px; }
@@ -245,51 +246,34 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
+    <!-- LEFT: Minimal copy -->
     <div>
-      <div class="hero-eyebrow">⚗️ World's Only Liquid SAM-e · CELLFOOD Delivery System</div>
+      <div class="hero-eyebrow">⚗️ World's Only Liquid SAM-e</div>
       <h1 class="hero-heading">
-        Most supplements<br>reinvent themselves<br>every few years.<br>
-        <em>CELLFOOD hasn't.</em>
+        Joint health. Mood.<br>Liver support.<br>
+        <em>One liquid formula.</em>
       </h1>
       <p class="hero-subhead">
-        CELLFOOD SAM-e is a significant breakthrough in nutritional chemistry — the first and only liquid SAM-e in the world, combined with CELLFOOD's unparalleled delivery system for maximum bioavailability.
+        The first and only liquid SAM-e in the world — combined with CELLFOOD's proven delivery system for maximum absorption. No tablets. No guesswork.
       </p>
-      <ul class="hero-bullets">
-        <li>8 drops in any water — no pills, no powder, no complicated routine</li>
-        <li>One 1 fl oz bottle makes over 22 quarts — a true 30-day supply</li>
-        <li>Supports natural energy, immune resilience &amp; mental clarity daily</li>
-        <li>Non-addictive, non-invasive, completely non-toxic when taken as directed</li>
-        <li>Gluten-Free · Certified Kosher · 7 Independent Quality Certifications</li>
-      </ul>
-    </div>
-
-    <div class="order-card" id="order">
-      <div class="oc-label">CELLFOOD® SAM-e Formula</div>
-      <div class="oc-name">Liquid SAM-e Formula</div>
-      <div class="oc-sub">1 fl oz · 30-Day Supply · Gluten Free</div>
-
-      <div class="oc-bottle">
-        <div class="oc-bottle-text">
-          <div class="oc-bottle-name">CELLFOOD®</div>
-          <div class="oc-bottle-detail">Oxygen Boost · 1 fl oz<br>Dietary Supplement · Makes 22+ Quarts</div>
+      <div style="display:flex; align-items:center; gap:16px; margin-bottom:28px; flex-wrap:wrap;">
+        <a class="btn-primary" style="width:auto; padding:16px 32px; font-size:15px;" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1" target="_blank">Try SAM-e — Save 15% →</a>
+        <div>
+          <div style="font-size:13px; color:var(--text-mid);"><del>$37.95</del> &nbsp;<strong style="color:#1A2744; font-size:18px;">$32.26</strong> <span style="background:#2670B8;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;margin-left:4px;">SAVE 15%</span></div>
+          <div style="font-size:11px;color:var(--text-light);margin-top:3px;">Code CELLFOOD15 · First purchase only</div>
         </div>
-        <div class="oc-badge">#1 Selling</div>
       </div>
-
-      <div class="oc-price-row">
-        <span class="oc-was">$37.95</span>
-        <span class="oc-now">$32.26</span>
-        <span class="oc-pill">SAVE 15%</span>
-      </div>
-      <p class="oc-code">Use code <strong>CELLFOOD15</strong> at checkout · First purchase only</p>
-      <p class="oc-value">💡 The only liquid SAM-e in the world — no tablets, no guesswork on dosage.</p>
-
-      <a class="btn-primary" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1" target="_blank">Try SAM-e — Save 15% →</a>
-      <div class="oc-trust">
-        <span>🔒 Secure</span>
+      <div style="display:flex; gap:20px; font-size:12px; color:var(--text-light); flex-wrap:wrap;">
+        <span>🔒 Secure Checkout</span>
         <span>📦 Free Shipping</span>
         <span>↩️ 30-Day Guarantee</span>
       </div>
+    </div>
+
+    <!-- RIGHT: Product image -->
+    <div id="order" style="border-radius:16px; overflow:hidden; box-shadow:0 4px 32px rgba(26,39,68,0.12); position:relative; max-width:480px;">
+      <img src="cellfood-same-hero.jpg" alt="CELLFOOD SAM-e — liquid formula with water splash" style="width:100%; display:block;" />
+      <div style="position:absolute; top:16px; left:16px; background:rgba(255,255,255,0.92); border-radius:8px; padding:8px 14px; font-size:12px; font-weight:700; color:#1B3A6B; letter-spacing:0.04em;">World's Only Liquid SAM-e</div>
     </div>
   </div>
 </section>
@@ -343,11 +327,11 @@
 <section class="section section-cream">
   <div class="container">
     <span class="s-label center">The Real Problem</span>
-    <h2 class="s-head center">You've tried everything.<br>Something's still missing.</h2>
+    <h2 class="s-head center">Sound familiar?</h2>
     <div class="ps-grid">
       <div class="ps-card problem">
         <span class="ps-clabel">Sound familiar?</span>
-        <h3 class="ps-cheading">SAM-e tablets that never quite work.</h3>
+        <h3 class="ps-cheading">The problem with SAM-e tablets.</h3>
         <ul class="ps-list">
           <li><span class="ps-icon">😮‍💨</span>You're doing everything right — still exhausted by 2pm.</li>
           <li><span class="ps-icon">💊</span>Swallowing handfuls of capsules that may or may not work.</li>
@@ -360,10 +344,10 @@
         <span class="ps-clabel">A different approach</span>
         <h3 class="ps-cheading">Liquid delivery. Precise dosing. Maximum absorption.</h3>
         <ul class="ps-list">
-          <li><span class="ps-icon">✅</span>World's only liquid SAM-e — superior bioavailability vs. tablets.</li>
-          <li><span class="ps-icon">✅</span>Flexible dosing — take fewer drops when you need less. No tablet splitting.</li>
-          <li><span class="ps-icon">✅</span>CELLFOOD delivery system carries SAM-e to the cellular level.</li>
-          <li><span class="ps-icon">✅</span>Supports joint health, mood, and liver function simultaneously.</li>
+          <li><span class="ps-icon">✅</span>World's only liquid SAM-e — better absorption than tablets.</li>
+          <li><span class="ps-icon">✅</span>Flexible liquid dosing — fewer drops when you need less.</li>
+          <li><span class="ps-icon">✅</span>CELLFOOD's delivery system works at the cellular level.</li>
+          <li><span class="ps-icon">✅</span>Supports joints, mood, and liver function — in one formula.</li>
           <li><span class="ps-icon">✅</span>Gluten-Free, Kosher Certified, non-addictive liquid formula.</li>
         </ul>
       </div>
@@ -381,7 +365,7 @@
       <div class="step-card">
         <div class="step-num">1</div>
         <div class="step-title">Joint Support</div>
-        <p class="step-desc">SAM-e supports sulfate group absorption into glycoproteins, helping maintain cartilage and protect joints. Cysteine and glutathione are byproducts with potent health-optimizing properties.</p>
+        <p class="step-desc">SAM-e supports sulfate absorption into glycoproteins that help maintain cartilage and protect joints — without relying on NSAIDs.</p>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
