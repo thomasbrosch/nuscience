@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CELLFOOD® Oxygen Boost — Official Site</title>
+  <title>CELLFOOD® SAM-e Formula — Official Site</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy:       #1B3A6B;
-      --navy-dark:  #0D2348;
-      --gold:       #C8923A;
-      --gold-light: #E8B96A;
+      --navy:       #0055AA;
+      --navy-dark:  #003D80;
+      --gold:       #B8962E;
+      --gold-light: #D4AE52;
       --cream:      #F8F9FC;
       --white:      #FFFFFF;
       --text:       #1A2744;
@@ -34,53 +34,53 @@
     .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
     /* PROMO BAR */
-    .promo-bar { background: #1B3A6B; color: #A8CCF0; text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; position: sticky; top: 0; z-index: 100; }
+    .promo-bar { background: #0055AA; color: #A8CCF0; text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; position: sticky; top: 0; z-index: 100; }
     .promo-bar span { color: var(--white); font-weight: 400; }
 
     /* NAV */
     .nav { background: var(--white); border-bottom: 1px solid #E2E8F0; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 39px; z-index: 99; }
-    .nav-logo { font-family: var(--ff-display); font-size: 22px; font-weight: 700; color: var(--navy); letter-spacing: 0.04em; }
-    .nav-logo span { color: var(--gold); }
+    .nav-logo-wrap { display:flex; align-items:center; }
+    
     .nav-trust { font-size: 12px; color: var(--text-mid); display: flex; align-items: center; gap: 18px; }
-    .nav-cta { background: #2670B8; color: var(--white); font-weight: 700; font-size: 13px; padding: 10px 22px; border-radius: var(--radius); white-space: nowrap; transition: background 0.2s; }
-    .nav-cta:hover { background: #1B5DA8; }
+    .nav-cta { background: #0066CC; color: var(--white); font-weight: 700; font-size: 13px; padding: 10px 22px; border-radius: var(--radius); white-space: nowrap; transition: background 0.2s; }
+    .nav-cta:hover { background: #0055AA; }
 
     /* HERO */
     .hero { background: #ffffff; color: var(--text); padding: 72px 20px 80px; position: relative; overflow: hidden; border-bottom: 1px solid #EDF0F5; }
     .hero::before { display: none; }
-    .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: center; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: #EEF5FF; border: 1px solid #C8DDF5; border-radius: 40px; padding: 6px 16px; font-size: 11px; font-weight: 600; color: #3D7FBF; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 460px; gap: 52px; align-items: center; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: #EBF3FF; border: 1px solid #B8D4F0; border-radius: 40px; padding: 6px 16px; font-size: 11px; font-weight: 600; color: #2277CC; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px; }
     .hero-heading { font-family: var(--ff-display); font-size: clamp(30px, 4vw, 48px); font-weight: 900; line-height: 1.12; margin-bottom: 20px; color: var(--navy); }
-    .hero-heading em { color: #2670B8; font-style: normal; }
+    .hero-heading em { color: #0066CC; font-style: normal; }
     .hero-subhead { font-size: 16px; color: var(--text-mid); line-height: 1.65; margin-bottom: 20px; max-width: 500px; }
     .hero-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px; }
     .hero-bullets li { display: flex; align-items: flex-start; gap: 9px; font-size: 14px; color: var(--text-mid); }
-    .hero-bullets li::before { content: '✓'; color: #3D7FBF; font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+    .hero-bullets li::before { content: '✓'; color: #2277CC; font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 2px; }
 
     /* ORDER CARD */
     .order-card { background: #ffffff; border: 1px solid #E2ECF8; border-radius: var(--radius-lg); padding: 28px; box-shadow: 0 2px 16px rgba(27,59,107,0.08), 0 0 0 1px rgba(27,59,107,0.04); }
-    .oc-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #3D7FBF; margin-bottom: 4px; }
+    .oc-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #2277CC; margin-bottom: 4px; }
     .oc-name { font-family: var(--ff-display); font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
     .oc-sub { font-size: 12px; color: var(--text-light); margin-bottom: 18px; }
     .oc-bottle { width: 100%; height: 120px; background: linear-gradient(160deg, #EDF5FF, #D8EAF8); border: 1px solid #C5DCEF; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; position: relative; }
     .oc-bottle-text { text-align: center; }
-    .oc-bottle-name { font-family: var(--ff-display); font-size: 22px; font-weight: 900; color: #1B3A6B; letter-spacing: 0.06em; text-align: center; }
+    .oc-bottle-name { font-family: var(--ff-display); font-size: 22px; font-weight: 900; color: #0055AA; letter-spacing: 0.06em; text-align: center; }
     .oc-bottle-detail { font-size: 10px; color: #5A80A8; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px; text-align: center; }
     .oc-badge { position: absolute; top: 8px; right: 8px; background: var(--gold); color: var(--white); font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 20px; }
     .oc-price-row { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
     .oc-was { font-size: 15px; text-decoration: line-through; color: #718096; }
-    .oc-now { font-size: 32px; font-weight: 700; color: #1B3A6B; font-family: var(--ff-display); line-height: 1; }
-    .oc-pill { background: #3D7FBF; color: var(--white); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 40px; }
+    .oc-now { font-size: 32px; font-weight: 700; color: #0055AA; font-family: var(--ff-display); line-height: 1; }
+    .oc-pill { background: #2277CC; color: var(--white); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 40px; }
     .oc-code { font-size: 12px; color: #4A5568; margin-bottom: 12px; }
-    .oc-code strong { color: #3D7FBF; font-weight: 700; letter-spacing: 0.05em; }
-    .oc-value { font-size: 12px; color: #4A5568; margin-bottom: 18px; padding: 8px 12px; background: #F4F8FF; border-radius: 6px; border-left: 3px solid #3D7FBF; }
-    .btn-primary { display: block; width: 100%; background: #2670B8; color: var(--white); font-size: 16px; font-weight: 700; padding: 17px 28px; border-radius: var(--radius); text-align: center; border: none; cursor: pointer; transition: background 0.2s, transform 0.1s; letter-spacing: 0.02em; text-decoration: none; }
-    .btn-primary:hover { background: #1B5DA8; transform: translateY(-1px); }
+    .oc-code strong { color: #2277CC; font-weight: 700; letter-spacing: 0.05em; }
+    .oc-value { font-size: 12px; color: #4A5568; margin-bottom: 18px; padding: 8px 12px; background: #F4F8FF; border-radius: 6px; border-left: 3px solid #2277CC; }
+    .btn-primary { display: block; width: 100%; background: #0066CC; color: var(--white); font-size: 15px; font-weight: 700; padding: 17px 28px; border-radius: var(--radius); text-align: center; border: none; cursor: pointer; transition: background 0.2s, transform 0.1s; letter-spacing: 0.02em; text-decoration: none; white-space: nowrap; }
+    .btn-primary:hover { background: #0055AA; transform: translateY(-1px); }
     .btn-primary:active { transform: translateY(0); }
     .oc-trust { display: flex; gap: 12px; margin-top: 11px; font-size: 11px; color: #718096; justify-content: center; flex-wrap: wrap; }
 
     /* PROOF BAR */
-    .proof-bar { background: #1B3A6B; padding: 22px; }
+    .proof-bar { background: #0055AA; padding: 22px; }
     .proof-bar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
     .proof-stat { text-align: center; color: var(--white); }
     .proof-num { font-family: var(--ff-display); font-size: 26px; font-weight: 700; color: var(--gold-light); display: block; line-height: 1; }
@@ -91,7 +91,7 @@
     .section { padding: 80px 20px; }
     .section-cream { background: #F8F9FC; }
     .section-white { background: var(--white); }
-    .s-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #3D7FBF; margin-bottom: 12px; display: block; }
+    .s-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #2277CC; margin-bottom: 12px; display: block; }
     .s-head { font-family: var(--ff-display); font-size: clamp(24px, 3vw, 38px); font-weight: 700; line-height: 1.2; color: #1A2744; margin-bottom: 16px; }
     .s-head.light { color: var(--white); }
     .s-sub { font-size: 16px; color: var(--text-mid); max-width: 560px; line-height: 1.65; }
@@ -104,7 +104,7 @@
     .research-card { background: #ffffff; border: 1px solid #D0E8F5; padding: 28px 22px; text-align: center; box-shadow: 0 1px 6px rgba(1,100,180,0.06); }
     .research-card:first-child { border-radius: var(--radius-lg) 0 0 var(--radius-lg); }
     .research-card:last-child { border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
-    .research-num { font-family: var(--ff-display); font-size: 38px; font-weight: 900; color: #1B5DA8; line-height: 1; margin-bottom: 8px; }
+    .research-num { font-family: var(--ff-display); font-size: 38px; font-weight: 900; color: #0055AA; line-height: 1; margin-bottom: 8px; }
     .research-title { font-size: 13px; font-weight: 700; color: #1A2744; margin-bottom: 5px; line-height: 1.4; }
     .research-source { font-size: 10px; color: #5A80A8; letter-spacing: 0.04em; line-height: 1.4; }
 
@@ -124,7 +124,7 @@
     /* STEPS */
     .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 900px; margin: 44px auto 0; }
     .step-card { text-align: center; padding: 24px 18px; }
-    .step-num { width: 50px; height: 50px; border-radius: 50%; background: #3D7FBF; color: var(--white); font-family: var(--ff-display); font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+    .step-num { width: 50px; height: 50px; border-radius: 50%; background: #2277CC; color: var(--white); font-family: var(--ff-display); font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
     .step-title { font-family: var(--ff-display); font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 7px; }
     .step-desc { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
 
@@ -137,12 +137,12 @@
 
     /* ATHLETE */
     .athlete-wrap { max-width: 820px; margin: 44px auto 0; background: #ffffff; border: 1px solid #E8EFF8; border-radius: var(--radius-lg); padding: 36px; box-shadow: 0 2px 16px rgba(26,39,68,0.06); display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
-    .athlete-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #3D7FBF; margin-bottom: 8px; }
+    .athlete-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #2277CC; margin-bottom: 8px; }
     .athlete-heading { font-family: var(--ff-display); font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
     .athlete-body { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
     .athlete-stats { display: flex; flex-direction: column; gap: 12px; }
     .athlete-stat { background: #F8F9FC; border: 1px solid #E2E8F0; border-radius: var(--radius); padding: 14px 16px; }
-    .athlete-stat-num { font-family: var(--ff-display); font-size: 24px; font-weight: 700; color: #3D7FBF; line-height: 1; }
+    .athlete-stat-num { font-family: var(--ff-display); font-size: 24px; font-weight: 700; color: #2277CC; line-height: 1; }
     .athlete-stat-label { font-size: 12px; color: var(--text-mid); margin-top: 3px; line-height: 1.4; }
 
     /* COMPARE */
@@ -160,10 +160,10 @@
     .cr-other { justify-content: center; color: #C0392B; }
 
     /* MID CTA */
-    .cta-band { background: #1B3A6B; padding: 52px 20px; text-align: center; }
+    .cta-band { background: #0055AA; padding: 52px 20px; text-align: center; }
     .cta-band-heading { font-family: var(--ff-display); font-size: clamp(22px, 2.8vw, 34px); font-weight: 900; color: var(--white); margin-bottom: 10px; }
     .cta-band-sub { font-size: 15px; color: rgba(255,255,255,0.88); margin-bottom: 24px; }
-    .btn-white { display: inline-block; background: var(--white); color: #2670B8; font-weight: 700; font-size: 16px; padding: 15px 38px; border-radius: var(--radius); transition: background 0.2s; }
+    .btn-white { display: inline-block; background: var(--white); color: #0066CC; font-weight: 700; font-size: 16px; padding: 15px 38px; border-radius: var(--radius); transition: background 0.2s; }
     .btn-white:hover { background: var(--cream); }
 
     /* CERTS */
@@ -191,13 +191,13 @@
     .faq-item:last-child { border-bottom: none; }
     .faq-q { width: 100%; background: var(--white); border: none; text-align: left; padding: 18px 22px; font-size: 14px; font-weight: 600; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; transition: background 0.15s; }
     .faq-q:hover { background: #F8F9FC; }
-    .faq-arrow { font-size: 18px; transition: transform 0.25s; flex-shrink: 0; color: #3D7FBF; }
+    .faq-arrow { font-size: 18px; transition: transform 0.25s; flex-shrink: 0; color: #2277CC; }
     .faq-q.open .faq-arrow { transform: rotate(45deg); }
     .faq-a { display: none; padding: 0 22px 18px; font-size: 13px; color: var(--text-mid); line-height: 1.65; background: var(--white); }
     .faq-a.open { display: block; }
 
     /* FINAL CTA */
-    .final-cta { background: #1B3A6B; padding: 80px 20px; text-align: center; color: var(--white); }
+    .final-cta { background: #0055AA; padding: 80px 20px; text-align: center; color: var(--white); }
     .final-cta-form { max-width: 420px; margin: 0 auto; }
     .final-cta-trust { display: flex; gap: 24px; justify-content: center; margin-top: 18px; font-size: 11px; color: rgba(255,255,255,0.42); flex-wrap: wrap; }
     .final-cta-trust span { display: flex; align-items: center; gap: 4px; }
@@ -210,6 +210,7 @@
     @media (max-width: 768px) {
       .nav-trust { display: none; }
       .hero-inner { grid-template-columns: 1fr; }
+      .hero-inner > div:last-child { order: -1; }
       .ps-grid, .steps-grid, .benefits-grid, .reviews-grid, .athlete-wrap { grid-template-columns: 1fr; }
       .cert-grid { grid-template-columns: repeat(2, 1fr); }
       .research-grid { grid-template-columns: 1fr; gap: 2px; }
@@ -225,71 +226,56 @@
 </head>
 <body>
 
-<div style="height:3px;background:linear-gradient(90deg,#3D7FBF,#7BB8E8,#3D7FBF);"></div>
+<div style="height:3px;background:linear-gradient(90deg,#2277CC,#7BB8E8,#2277CC);"></div>
 <!-- PROMO BAR -->
 <div class="promo-bar">
-  🎁 First Order: Code <strong>CELLFOOD15</strong> &nbsp;·&nbsp; <span>Save 15% + Free Shipping — Limited Time</span>
+  🎁 First Order: Code <strong>TRYCF15</strong> &nbsp;·&nbsp; <span>Save 15% on CELLFOOD SAM-e — Limited Time</span>
 </div>
 
 <!-- NAV -->
 <nav class="nav">
-  <div class="nav-logo">CELL<span>FOOD</span>®</div>
+  <div class="nav-logo-wrap">
+      <img src="nuscience-logo.jpeg" alt="NuScience Corporation — Makers of CELLFOOD" style="height:48px; width:auto; display:block;" />
+    </div>
   <div class="nav-trust">
     <span>⭐ 4.6 / 3,200+ Reviews</span>
     <span>🌍 Trusted in 90+ Countries</span>
     <span>✅ 7 Independent Certifications</span>
   </div>
-  <a class="nav-cta" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=c9335755-de40-4114-be60-cee6280c9c64&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1" target="_blank">Try CELLFOOD →</a>
+  <a class="nav-cta" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15" target="_blank">Try CELLFOOD →</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
+    <!-- LEFT: Minimal copy -->
     <div>
-      <div class="hero-eyebrow">⚗️ The Original Formula · Unchanged Since 1969</div>
+      <div class="hero-eyebrow">⚗️ World's Only Liquid SAM-e</div>
       <h1 class="hero-heading">
-        Most supplements<br>reinvent themselves<br>every few years.<br>
-        <em>CELLFOOD hasn't.</em>
+        Joint health. Mood.<br>Liver support.<br>
+        <em>One liquid formula.</em>
       </h1>
       <p class="hero-subhead">
-        The world's #1 selling oxygen + nutrient supplement. A proprietary liquid formula trusted in 90+ countries for over 50 years — not because of marketing, but because it works.
+        The first and only liquid SAM-e in the world — combined with CELLFOOD's proven delivery system for maximum absorption. No tablets. No guesswork.
       </p>
-      <ul class="hero-bullets">
-        <li>8 drops in any water — no pills, no powder, no complicated routine</li>
-        <li>One 1 fl oz bottle makes over 22 quarts — a true 30-day supply</li>
-        <li>Supports natural energy, immune resilience &amp; mental clarity daily</li>
-        <li>Non-addictive, non-invasive, completely non-toxic when taken as directed</li>
-        <li>Gluten-Free · Certified Kosher · 7 Independent Quality Certifications</li>
-      </ul>
-    </div>
-
-    <div class="order-card" id="order">
-      <div class="oc-label">CELLFOOD® Oxygen Boost</div>
-      <div class="oc-name">1 fl oz Concentrate</div>
-      <div class="oc-sub">30-Day Supply · Makes Over 22 Quarts</div>
-
-      <div class="oc-bottle">
-        <div class="oc-bottle-text">
-          <div class="oc-bottle-name">CELLFOOD®</div>
-          <div class="oc-bottle-detail">Oxygen Boost · 1 fl oz<br>Dietary Supplement · Makes 22+ Quarts</div>
+      <div style="display:flex; align-items:center; gap:16px; margin-bottom:28px; flex-wrap:wrap;">
+        <a class="btn-primary" style="width:auto; padding:16px 32px; font-size:15px;" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15" target="_blank">Try SAM-e — Save 15% →</a>
+        <div>
+          <div style="font-size:13px; color:var(--text-mid);"><del>$37.95</del> &nbsp;<strong style="color:#1A2744; font-size:18px;">$32.26</strong> <span style="background:#0066CC;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;margin-left:4px;">SAVE 15%</span></div>
+          <div style="font-size:11px;color:var(--text-light);margin-top:3px;">Code TRYCF15 · First purchase only</div>
         </div>
-        <div class="oc-badge">#1 Selling</div>
       </div>
-
-      <div class="oc-price-row">
-        <span class="oc-was">$27.95</span>
-        <span class="oc-now">$23.76</span>
-        <span class="oc-pill">SAVE 15%</span>
-      </div>
-      <p class="oc-code">Use code <strong>CELLFOOD15</strong> at checkout · First purchase only</p>
-      <p class="oc-value">💡 One bottle makes 22+ quarts — less than $1/day for your daily ritual.</p>
-
-      <a class="btn-primary" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=c9335755-de40-4114-be60-cee6280c9c64&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1" target="_blank">Try CELLFOOD Today — Save 15% →</a>
-      <div class="oc-trust">
-        <span>🔒 Secure</span>
+      <div style="display:flex; gap:20px; font-size:12px; color:var(--text-light); flex-wrap:wrap;">
+        <span>🔒 Secure Checkout</span>
         <span>📦 Free Shipping</span>
         <span>↩️ 30-Day Guarantee</span>
       </div>
+    </div>
+
+    <!-- RIGHT: Product image -->
+    <div id="order" style="border-radius:16px; overflow:hidden; box-shadow:0 4px 32px rgba(26,39,68,0.12); position:relative; max-width:480px;">
+      <img src="cellfood-same-hero.jpg" alt="CELLFOOD SAM-e — liquid formula with water splash" style="width:100%; display:block;" />
+
     </div>
   </div>
 </section>
@@ -303,7 +289,7 @@
     <div class="proof-div"></div>
     <div class="proof-stat"><span class="proof-num">4.6★</span><div class="proof-lbl">3,200+ Reviews</div></div>
     <div class="proof-div"></div>
-    <div class="proof-stat"><span class="proof-num">#1</span><div class="proof-lbl">O₂ + Nutrient Supplement</div></div>
+    <div class="proof-stat"><span class="proof-num">#1</span><div class="proof-lbl">Liquid SAM-e Worldwide</div></div>
     <div class="proof-div"></div>
     <div class="proof-stat"><span class="proof-num">7</span><div class="proof-lbl">Quality Certifications</div></div>
     <div class="proof-div"></div>
@@ -316,23 +302,23 @@
   <div class="container">
     <div style="text-align:center;">
       <span class="s-label" style="color:var(--gold-light)">Independent Research</span>
-      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(22px,2.5vw,32px); font-weight:700; line-height:1.2; color:#1A2744; text-align:center; margin-bottom:0;">What independent researchers have found about CELLFOOD.</h2>
+      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(22px,2.5vw,32px); font-weight:700; line-height:1.2; color:#1A2744; text-align:center; margin-bottom:0;">Why CELLFOOD SAM-e is unlike any other SAM-e supplement.</h2>
     </div>
     <div class="research-grid">
       <div class="research-card">
-        <div class="research-num">30×</div>
-        <div class="research-title">Higher biological antioxidant potential than normal human plasma</div>
-        <div class="research-source">International Observatory of Oxidative Stress · Italy</div>
+        <div class="research-num">Only</div>
+        <div class="research-title">Liquid SAM-e in the world — stable colloidal suspension technology</div>
+        <div class="research-source">NuScience Corporation · First &amp; Only U.S. Laboratory</div>
       </div>
       <div class="research-card">
-        <div class="research-num">27%</div>
-        <div class="research-title">Decrease in excess free radical activity observed in vitro</div>
-        <div class="research-source">Independent In Vitro Oxidative Stress Study</div>
+        <div class="research-num">3-in-1</div>
+        <div class="research-title">Supports joints, mood &amp; liver health simultaneously in one formula</div>
+        <div class="research-source">SAM-e Peer-Reviewed Research · Multiple Institutions</div>
       </div>
       <div class="research-card">
-        <div class="research-num">VO₂↑</div>
-        <div class="research-title">Increased oxygen uptake, ferritin &amp; reduced lactic acid in athletes</div>
-        <div class="research-source">University of Pretoria · Athletic Performance Study</div>
+        <div class="research-num">Liquid</div>
+        <div class="research-title">Delivery for precise flexible dosing — take fewer drops as needed, no tablet splitting</div>
+        <div class="research-source">CELLFOOD Colloidal Delivery System · Proprietary</div>
       </div>
     </div>
     <p style="text-align:center; font-size:11px; color:rgba(255,255,255,0.25); margin-top:18px; max-width:600px; margin-left:auto; margin-right:auto;">These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
@@ -343,11 +329,11 @@
 <section class="section section-cream">
   <div class="container">
     <span class="s-label center">The Real Problem</span>
-    <h2 class="s-head center">You've tried everything.<br>Something's still missing.</h2>
+    <h2 class="s-head center">Sound familiar?</h2>
     <div class="ps-grid">
       <div class="ps-card problem">
         <span class="ps-clabel">Sound familiar?</span>
-        <h3 class="ps-cheading">The supplement cycle that never ends.</h3>
+        <h3 class="ps-cheading">The problem with SAM-e tablets.</h3>
         <ul class="ps-list">
           <li><span class="ps-icon">😮‍💨</span>You're doing everything right — still exhausted by 2pm.</li>
           <li><span class="ps-icon">💊</span>Swallowing handfuls of capsules that may or may not work.</li>
@@ -358,13 +344,13 @@
       </div>
       <div class="ps-card solution">
         <span class="ps-clabel">A different approach</span>
-        <h3 class="ps-cheading">Support at the cellular level. Since 1969.</h3>
+        <h3 class="ps-cheading">Liquid delivery. Precise dosing. Maximum absorption.</h3>
         <ul class="ps-list">
-          <li><span class="ps-icon">✅</span>Supports natural energy production — without stimulants or a crash.</li>
-          <li><span class="ps-icon">✅</span>Liquid drops — no pills, no powder. Just 8 drops in any water.</li>
-          <li><span class="ps-icon">✅</span>Proprietary formula unchanged for 50+ years — because it works.</li>
-          <li><span class="ps-icon">✅</span>Supports immune resilience and daily vitality.</li>
-          <li><span class="ps-icon">✅</span>One bottle makes 22+ quarts — less than a dollar a day.</li>
+          <li><span class="ps-icon">✅</span>World's only liquid SAM-e — better absorption than tablets.</li>
+          <li><span class="ps-icon">✅</span>Flexible liquid dosing — fewer drops when you need less.</li>
+          <li><span class="ps-icon">✅</span>CELLFOOD's delivery system works at the cellular level.</li>
+          <li><span class="ps-icon">✅</span>Supports joints, mood, and liver function — in one formula.</li>
+          <li><span class="ps-icon">✅</span>Gluten-Free, Kosher Certified, non-addictive liquid formula.</li>
         </ul>
       </div>
     </div>
@@ -374,14 +360,14 @@
 <!-- HOW IT WORKS -->
 <section class="section section-white">
   <div class="container">
-    <span class="s-label center">How It Works</span>
-    <h2 class="s-head center">The simplest daily ritual<br>you'll ever stick with.</h2>
-    <p class="s-sub center">No measuring. No shakers. No stack of capsules. Just drops.</p>
+    <span class="s-label center">Three Core Benefits</span>
+    <h2 class="s-head center">Three ways SAM-e<br>supports your body daily.</h2>
+    <p class="s-sub center">Joint health, mood support, and liver function — in one liquid formula.</p>
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">1</div>
-        <div class="step-title">Pour Your Water</div>
-        <p class="step-desc">Any water, any glass, any temperature. CELLFOOD fits into your existing morning — nothing new to buy or prepare.</p>
+        <div class="step-title">Joint Support</div>
+        <p class="step-desc">SAM-e supports sulfate absorption into glycoproteins that help maintain cartilage and protect joints — without relying on NSAIDs.</p>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
@@ -400,8 +386,8 @@
 <!-- BENEFITS -->
 <section class="section section-cream">
   <div class="container">
-    <span class="s-label center">What CELLFOOD Supports</span>
-    <h2 class="s-head center">Four pillars of daily vitality.</h2>
+    <span class="s-label center">What CELLFOOD SAM-e Supports</span>
+    <h2 class="s-head center">Multiple benefits. One liquid formula.</h2>
     <div class="benefits-grid">
       <div class="benefit-card">
         <div class="benefit-icon">⚡</div>
@@ -438,11 +424,11 @@
 <!-- ATHLETE -->
 <section class="section section-white">
   <div class="container">
-    <span class="s-label center">Athletic Performance</span>
-    <h2 class="s-head center">Trusted by professional athletes.</h2>
+    <span class="s-label center">Clinical Research</span>
+    <h2 class="s-head center">Decades of SAM-e research behind every drop.</h2>
     <div class="athlete-wrap">
       <div>
-        <div class="athlete-label">University of Pretoria Study</div>
+        <div class="athlete-label">Peer-Reviewed SAM-e Research</div>
         <h3 class="athlete-heading">CELLFOOD has become the supplement of choice for many professional athletes.</h3>
         <p class="athlete-body">In a study conducted at the University of Pretoria, CELLFOOD was shown to support key athletic performance markers. Notably, CELLFOOD contains no ingredients on the banned substances lists for professional or amateur competitions. It is non-addictive, non-invasive, and non-toxic when taken as directed.</p>
       </div>
@@ -490,9 +476,9 @@
 <!-- MID CTA -->
 <div class="cta-band">
   <div class="container">
-    <h2 class="cta-band-heading">The formula that hasn't changed since 1969.</h2>
-    <p class="cta-band-sub">Try CELLFOOD for the first time and save 15% — use code CELLFOOD15 at checkout.</p>
-    <a class="btn-white" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=c9335755-de40-4114-be60-cee6280c9c64&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1" target="_blank">Try CELLFOOD Today →</a>
+    <h2 class="cta-band-heading">The world's only liquid SAM-e formula.</h2>
+    <p class="cta-band-sub">Try CELLFOOD SAM-e for the first time and save 15% — use code TRYCF15 at checkout.</p>
+    <a class="btn-white" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15" target="_blank">Try CELLFOOD Today →</a>
   </div>
 </div>
 
@@ -556,15 +542,15 @@
     <h2 class="s-head center">What people ask before trying CELLFOOD.</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFAQ(this)">What exactly is CELLFOOD and how is it different?<span class="faq-arrow">+</span></button>
+        <button class="faq-q" onclick="toggleFAQ(this)">What exactly is CELLFOOD SAM-e and how is it different?<span class="faq-arrow">+</span></button>
         <div class="faq-a">CELLFOOD is the original liquid oxygen + nutrient supplement, formulated in 1969 by Everett Storey. It's a proprietary liquid concentrate you add to any water — just 8 drops per day. Unlike powders, capsules, or greens drinks, there's nothing to mix or measure beyond those 8 drops. The formula has never changed in over 50 years because NuScience Corporation is formulation-first — not marketing-first. It is the world's #1 selling oxygen + nutrient supplement, trusted in 90+ countries.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFAQ(this)">How does one small 1 fl oz bottle last a full month?<span class="faq-arrow">+</span></button>
+        <button class="faq-q" onclick="toggleFAQ(this)">Why liquid SAM-e instead of tablets?<span class="faq-arrow">+</span></button>
         <div class="faq-a">CELLFOOD is a concentrate. At the recommended serving of 8 drops, a single 1 fl oz bottle makes over 22 quarts of supplement-enriched water — a full 30-day supply. That works out to less than a dollar a day. You are not paying for water, fillers, or packaging — you are paying for a highly concentrated proprietary formula.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFAQ(this)">Why hasn't the formula changed since 1969?<span class="faq-arrow">+</span></button>
+        <button class="faq-q" onclick="toggleFAQ(this)">What does SAM-e actually do in the body?<span class="faq-arrow">+</span></button>
         <div class="faq-a">Because it didn't need to. Most supplement brands reformulate every few years to chase trends. NuScience Corporation is a family-owned, formulation-first company. The proprietary CELLFOOD formula has proven effective across 50+ years and 90+ countries. Consistency IS the brand promise.</div>
       </div>
       <div class="faq-item">
@@ -572,12 +558,12 @@
         <div class="faq-a">CELLFOOD is manufactured in an FDA Registered, California State Licensed facility with 7 independent certifications: NPA cGMP, ANAB, ANSI, IAF, Kosher LA, UL Certified, and NPA membership. It is Gluten-Free, Kosher Certified, non-addictive, non-invasive, and non-toxic when taken as directed. Consult your healthcare provider if you have existing medical conditions or take prescription medications.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFAQ(this)">When will I notice a difference?<span class="faq-arrow">+</span></button>
+        <button class="faq-q" onclick="toggleFAQ(this)">Is there anyone who should not take CELLFOOD SAM-e?<span class="faq-arrow">+</span></button>
         <div class="faq-a">Individual results vary. Some customers notice a difference within the first few days. Others experience more gradual support over weeks of consistent use. CELLFOOD is a supplement, not a pharmaceutical — and we're transparent about that. The customers who see the best results use it consistently as part of a daily morning routine.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFAQ(this)">What is the discount code and how does it work?<span class="faq-arrow">+</span></button>
-        <div class="faq-a">Use code <strong>CELLFOOD15</strong> at checkout for 15% off your first purchase. This is a one-time use code for new customers only, valid for a limited time. Regular price is $27.95. With the discount, your first bottle is $23.76 — plus free U.S. shipping. No subscription required.</div>
+        <div class="faq-a">Use code <strong>TRYCF15</strong> at checkout for 15% off your first purchase. This is a one-time use code for new customers only, valid for a limited time. Regular price is $27.95. With the discount, your first bottle is $23.76 — plus free U.S. shipping. No subscription required.</div>
       </div>
     </div>
   </div>
@@ -588,14 +574,14 @@
   <div class="container">
     <span class="s-label center" style="color:var(--gold-light)">Start Today</span>
     <h2 class="s-head center" style="font-size:clamp(26px,3vw,42px);">
-      50 years. 90+ countries.<br>Unchanged formula.<br>
-      <span style="color:var(--gold-light);">Start your 8-drop ritual.</span>
+      The world's only liquid SAM-e.<br>Joint health. Mood. Liver support.<br>
+      <span style="color:var(--gold-light);">Start your daily ritual.</span>
     </h2>
     <p class="s-sub light center" style="margin: 0 auto 32px;">
-      First purchase: use code <strong style="color:var(--gold-light)">CELLFOOD15</strong> for 15% off your $27.95 bottle. One-time use. Free U.S. shipping included.
+      First purchase: use code <strong style="color:var(--gold-light)">TRYCF15</strong> for 15% off your $37.95 bottle. One-time use. Free U.S. shipping included.
     </p>
     <div class="final-cta-form">
-      <a class="btn-primary" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=c9335755-de40-4114-be60-cee6280c9c64&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1" target="_blank" style="font-size:17px; padding:20px 32px;">Try CELLFOOD Today — Save 15% →</a>
+      <a class="btn-primary" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15" target="_blank" style="font-size:17px; padding:20px 32px;">Try SAM-e — Save 15% →</a>
     </div>
     <div class="final-cta-trust">
       <span>🔒 Secure Checkout</span>
@@ -609,7 +595,7 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <p style="color:rgba(255,255,255,0.62); font-family:var(--ff-display); font-size:15px; font-weight:700; margin-bottom:6px;">CELLFOOD® · NuScience Corporation · www.NuScience.com</p>
+    <div style="margin-bottom:12px;"><img src="nuscience-logo.jpeg" alt="NuScience Corporation" style="height:40px;width:auto;filter:brightness(0) invert(1);opacity:0.7;display:inline-block;" /></div>
     <p>FDA Registered · cGMP / NPA Certified · ANAB Accredited · ANSI Accredited · UL Certified · Kosher LA · IAF Recognized</p>
     <p style="margin-top:12px; max-width:680px; margin-left:auto; margin-right:auto;">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. If under medical care, or if pregnant or nursing, please consult a health professional. Individual results may vary.</p>
     <p style="margin-top:10px;"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Use</a> &nbsp;·&nbsp; <a href="#">Contact Us</a> &nbsp;·&nbsp; <a href="#">Cellfood Research</a></p>
