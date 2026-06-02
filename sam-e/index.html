@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CELLFOOD® Oxygen Boost | World's #1 Oxygen + Nutrient Supplement</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>CELLFOOD® SAM-e | The World's Only Liquid SAM-e Formula</title>
 <style>
 /* ── BRAND TOKENS ───────────────────────────────────────── */
 :root {
@@ -20,7 +19,6 @@
   --font:        Arial, Helvetica, sans-serif;
 }
 
-/* ── RESET ──────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: var(--font); color: var(--text); background: var(--white); font-size: 18px; line-height: 1.6; }
@@ -63,6 +61,8 @@ nav {
   font-weight: 700;
   cursor: pointer;
   transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
 }
 .nav-cta:hover { background: #4346d4; }
 
@@ -77,12 +77,15 @@ nav {
   position: relative;
   overflow: hidden;
   min-height: 480px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  width: 36%;
+  max-width: 180px;
+  object-fit: contain;
 }
 .hero-content {
   padding: 48px 48px 48px 52px;
@@ -90,9 +93,13 @@ nav {
   flex-direction: column;
   justify-content: center;
 }
+.offer-box,
+.btn-primary {
+  max-width: 460px;
+}
 .hero-badge {
   display: inline-block;
-  background: var(--blue);
+  background: var(--purple);
   color: var(--white);
   font-size: 12px;
   font-weight: 700;
@@ -104,7 +111,7 @@ nav {
   width: fit-content;
 }
 .hero-headline {
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 1.15;
   color: var(--text);
@@ -112,17 +119,31 @@ nav {
 }
 .hero-headline em { color: var(--purple); font-style: normal; }
 .hero-sub {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--gray-mid);
   margin-bottom: 24px;
-  line-height: 1.6;
+  line-height: 1.65;
+}
+.hero-pillars {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.pillar-tag {
+  background: var(--gray-light);
+  color: var(--purple);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
 }
 .offer-box {
   background: var(--white);
   border: 2px solid var(--purple);
   border-radius: 12px;
-  padding: 24px 28px;
-  margin-bottom: 22px;
+  padding: 22px 26px;
+  margin-bottom: 20px;
 }
 .offer-price-row {
   display: flex;
@@ -130,7 +151,7 @@ nav {
   gap: 12px;
   margin-bottom: 8px;
 }
-.price-new { font-size: 36px; font-weight: 700; color: var(--purple); }
+.price-new { font-size: 34px; font-weight: 700; color: var(--purple); }
 .price-old { font-size: 20px; color: var(--gray-mid); text-decoration: line-through; }
 .price-save {
   background: #FFF3CD;
@@ -140,12 +161,14 @@ nav {
   padding: 3px 10px;
   border-radius: 20px;
 }
-.offer-code {
+.offer-code { font-size: 13px; color: var(--gray-mid); margin-top: 4px; }
+.offer-code strong { color: var(--purple); }
+.dosage-note {
   font-size: 13px;
   color: var(--gray-mid);
-  margin-top: 4px;
+  margin-top: 8px;
+  font-style: italic;
 }
-.offer-code strong { color: var(--purple); }
 .btn-primary {
   display: block;
   width: 100%;
@@ -165,14 +188,15 @@ nav {
 .btn-primary:hover { background: #4346d4; transform: translateY(-1px); }
 .hero-trust {
   display: flex;
-  gap: 20px;
-  margin-top: 18px;
+  gap: 16px;
+  margin-top: 16px;
   font-size: 13px;
   color: var(--gray-mid);
+  flex-wrap: wrap;
 }
 .hero-trust span::before { content: "✓  "; color: var(--blue); font-weight: 700; }
 
-/* ── SOCIAL PROOF BAR ───────────────────────────────────── */
+/* ── PROOF BAR ──────────────────────────────────────────── */
 .proof-bar {
   background: var(--purple);
   color: var(--white);
@@ -183,10 +207,20 @@ nav {
   flex-wrap: wrap;
 }
 .proof-stat { text-align: center; }
-.proof-stat .num { font-size: 28px; font-weight: 700; display: block; }
+.proof-stat .num { font-size: 26px; font-weight: 700; display: block; }
 .proof-stat .label { font-size: 13px; opacity: 0.85; }
 
-/* ── SECTION HEADINGS ───────────────────────────────────── */
+/* ── DIFFERENTIATOR BANNER ──────────────────────────────── */
+.diff-banner {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--purple) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 40px 40px;
+}
+.diff-banner h2 { font-size: 26px; font-weight: 700; margin-bottom: 10px; }
+.diff-banner p { font-size: 16px; opacity: 0.9; max-width: 640px; margin: 0 auto; line-height: 1.65; }
+
+/* ── SECTION ────────────────────────────────────────────── */
 .section { padding: 64px 40px; }
 .section-center { text-align: center; }
 .section-tag {
@@ -202,95 +236,93 @@ nav {
   margin-bottom: 14px;
 }
 .section-headline {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 14px;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .section-sub {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--gray-mid);
-  max-width: 600px;
+  max-width: 620px;
   margin: 0 auto 40px;
   line-height: 1.65;
 }
 
-/* ── HOW IT WORKS ───────────────────────────────────────── */
-.how-grid {
+/* ── 3 PILLARS ──────────────────────────────────────────── */
+.pillars-bg { background: var(--off-white); }
+.pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  max-width: 960px;
+  gap: 28px;
+  max-width: 1000px;
   margin: 0 auto;
 }
-.how-card {
-  text-align: center;
-  padding: 36px 24px;
+.pillar-card {
   background: var(--white);
-  border-radius: 14px;
+  border-radius: 16px;
+  padding: 36px 28px;
   box-shadow: 0 2px 16px rgba(89,92,252,0.09);
+  border-top: 5px solid var(--purple);
 }
-.how-number {
-  width: 52px;
-  height: 52px;
-  background: var(--purple);
-  color: var(--white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: 700;
-  margin: 0 auto 18px;
+.pillar-icon { font-size: 36px; margin-bottom: 16px; }
+.pillar-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--purple); }
+.pillar-card p { font-size: 15px; color: var(--gray-mid); line-height: 1.7; }
+.pillar-card .mechanism {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: var(--off-white);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.6;
+  font-style: italic;
 }
-.how-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-.how-card p { font-size: 16px; color: var(--gray-mid); line-height: 1.6; }
 
-/* ── BENEFITS ───────────────────────────────────────────── */
-.benefits-bg { background: var(--off-white); }
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 880px;
-  margin: 0 auto;
-}
-.benefit-card {
-  background: var(--white);
-  border-radius: 14px;
-  padding: 30px 28px;
-  border-left: 4px solid var(--purple);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-}
-.benefit-icon { font-size: 28px; margin-bottom: 12px; }
-.benefit-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-.benefit-card p { font-size: 16px; color: var(--gray-mid); line-height: 1.6; }
-
-/* ── SCIENCE / RESEARCH SECTION ─────────────────────────── */
-.science-grid {
+/* ── LIQUID ADVANTAGE ───────────────────────────────────── */
+.liquid-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
 }
-.science-stats { display: flex; flex-direction: column; gap: 20px; }
-.stat-card {
+.liquid-copy h2 { font-size: 28px; font-weight: 700; margin-bottom: 16px; line-height: 1.3; }
+.liquid-copy p { font-size: 16px; color: var(--gray-mid); line-height: 1.7; margin-bottom: 14px; }
+.compare-table { border-collapse: collapse; width: 100%; font-size: 15px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+.compare-table th { background: var(--purple); color: var(--white); padding: 14px 18px; text-align: left; font-weight: 700; }
+.compare-table td { padding: 13px 18px; border-bottom: 1px solid var(--gray-light); }
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table tr:nth-child(even) td { background: var(--off-white); }
+.check { color: #16a34a; font-weight: 700; }
+.cross { color: #dc2626; }
+
+/* ── DIRECTIONS ─────────────────────────────────────────── */
+.directions-bg { background: var(--off-white); }
+.directions-box {
+  max-width: 680px;
+  margin: 0 auto;
   background: var(--white);
-  border-radius: 12px;
-  padding: 24px 28px;
-  border-left: 5px solid var(--blue);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 40px 48px;
+  box-shadow: 0 2px 16px rgba(89,92,252,0.09);
+  text-align: center;
 }
-.stat-card .stat-num { font-size: 36px; font-weight: 700; color: var(--blue); }
-.stat-card .stat-label { font-size: 15px; color: var(--gray-mid); margin-top: 4px; }
-.science-copy h2 { font-size: 28px; font-weight: 700; margin-bottom: 16px; line-height: 1.3; }
-.science-copy p { font-size: 16px; color: var(--gray-mid); line-height: 1.7; margin-bottom: 14px; }
-.science-copy .cite { font-size: 13px; color: #9CA3AF; font-style: italic; }
+.directions-box h3 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+.directions-steps { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; flex-wrap: wrap; }
+.direction-step { text-align: center; }
+.direction-step .d-num {
+  width: 56px; height: 56px;
+  background: var(--purple);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: 700;
+  margin: 0 auto 10px;
+}
+.direction-step p { font-size: 15px; color: var(--gray-mid); max-width: 140px; }
+.dosage-flex { font-size: 13px; color: var(--gray-mid); font-style: italic; }
 
 /* ── MID CTA ────────────────────────────────────────────── */
 .mid-cta {
@@ -299,8 +331,8 @@ nav {
   text-align: center;
   padding: 56px 40px;
 }
-.mid-cta h2 { font-size: 30px; font-weight: 700; margin-bottom: 12px; }
-.mid-cta p { font-size: 17px; opacity: 0.9; margin-bottom: 28px; }
+.mid-cta h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+.mid-cta p { font-size: 16px; opacity: 0.9; margin-bottom: 28px; }
 .btn-white {
   display: inline-block;
   background: var(--white);
@@ -332,24 +364,27 @@ nav {
 }
 .stars { color: #F59E0B; font-size: 18px; margin-bottom: 12px; }
 .review-text { font-size: 15px; color: var(--text); line-height: 1.65; margin-bottom: 16px; font-style: italic; }
+.review-focus {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
 .reviewer { font-size: 14px; font-weight: 700; color: var(--gray-mid); }
 .reviewer span { color: var(--blue); font-weight: 400; font-size: 13px; }
 
-/* ── CERTIFICATIONS ─────────────────────────────────────── */
+/* ── CERTS ──────────────────────────────────────────────── */
 .certs-bar {
   text-align: center;
-  padding: 40px 40px;
+  padding: 40px;
   border-top: 1px solid var(--gray-light);
   border-bottom: 1px solid var(--gray-light);
 }
 .certs-bar p { font-size: 13px; color: var(--gray-mid); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
-.certs-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-  flex-wrap: wrap;
-}
+.certs-logos { display: flex; justify-content: center; align-items: center; gap: 32px; flex-wrap: wrap; }
 .certs-logos img { height: 48px; }
 
 /* ── FAQ ────────────────────────────────────────────────── */
@@ -382,7 +417,7 @@ nav {
   text-align: center;
   padding: 64px 40px;
 }
-.final-cta h2 { font-size: 32px; font-weight: 700; margin-bottom: 12px; }
+.final-cta h2 { font-size: 30px; font-weight: 700; margin-bottom: 12px; }
 .final-cta p { font-size: 17px; opacity: 0.9; margin-bottom: 10px; }
 .final-cta .code-callout {
   display: inline-block;
@@ -395,44 +430,25 @@ nav {
   letter-spacing: 0.05em;
   margin-bottom: 28px;
 }
-.final-cta .btn-white { margin-top: 0; }
-
-/* ── FOOTER ─────────────────────────────────────────────── */
-footer {
-  background: var(--text);
-  color: rgba(255,255,255,0.6);
-  text-align: center;
-  padding: 28px 40px;
-  font-size: 13px;
-  line-height: 1.7;
-}
+.disclaimer { background: var(--gray-light); padding: 20px 40px; font-size: 12px; color: var(--gray-mid); text-align: center; line-height: 1.6; }
+footer { background: var(--text); color: rgba(255,255,255,0.6); text-align: center; padding: 28px 40px; font-size: 13px; line-height: 1.7; }
 footer a { color: rgba(255,255,255,0.5); text-decoration: underline; }
-
-/* ── DISCLAIMER ─────────────────────────────────────────── */
-.disclaimer {
-  background: var(--gray-light);
-  padding: 20px 40px;
-  font-size: 12px;
-  color: var(--gray-mid);
-  text-align: center;
-  line-height: 1.6;
-}
 
 /* ── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 768px) {
   nav { padding: 12px 20px; }
   .hero { grid-template-columns: 1fr; }
-  .hero-image { min-height: 300px; }
+  .hero-image { min-height: 260px; }
   .hero-content { padding: 32px 20px; }
   .hero-headline { font-size: 28px; }
-  .proof-bar { gap: 24px; padding: 20px; }
+  .proof-bar { gap: 20px; padding: 20px; }
   .section { padding: 48px 20px; }
-  .how-grid { grid-template-columns: 1fr; }
-  .benefits-grid { grid-template-columns: 1fr; }
-  .science-grid { grid-template-columns: 1fr; }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .liquid-section { grid-template-columns: 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
-  .section-headline { font-size: 26px; }
+  .section-headline { font-size: 24px; }
   .mid-cta, .final-cta { padding: 44px 20px; }
+  .directions-box { padding: 28px 20px; }
   .hero-trust { flex-wrap: wrap; gap: 10px; }
   .certs-logos img { height: 36px; }
 }
@@ -442,15 +458,14 @@ footer a { color: rgba(255,255,255,0.5); text-decoration: underline; }
 
 <!-- PROMO BAR -->
 <div class="promo-bar">
-  Limited Offer: Use code <span>TRYCF15</span> for 15% off your first order — Ships Free on orders $35+
+  Limited Offer: Use code <span>TRYCF15</span> for 15% off your first order
 </div>
 
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
     <img src="https://nuscience.com/wp-content/uploads/NuScience-Corporation-Header-Image-340-250x86.png"
-         alt="NuScience Corporation"
-         onerror="this.style.display='none'">
+         alt="NuScience Corporation" onerror="this.style.display='none'">
   </div>
   <a href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15"
      class="nav-cta">Try It — 15% Off</a>
@@ -459,147 +474,176 @@ footer a { color: rgba(255,255,255,0.5); text-decoration: underline; }
 <!-- HERO -->
 <section class="hero">
   <div class="hero-image">
-    <!-- PLACEHOLDER: replace src with athletic woman image once provided -->
-    <img src="https://nuscience.com/wp-content/uploads/dark-skinned-woman-holding-a-glass-of-water-2-250x372.jpg"
-         alt="Active woman supporting her daily wellness routine with CELLFOOD Oxygen Boost"
-         onerror="this.style.background:'var(--gray-light)'; this.style.display='block'; this.style.minHeight='480px';">
+    <img src="cellfood-same-hero.webp" alt="CELLFOOD SAM-e Liquid Formula+">
   </div>
   <div class="hero-content">
-    <span class="hero-badge">World's #1 Oxygen + Nutrient Supplement</span>
-    <h1 class="hero-headline">More Energy.<br><em>Clearer Mind.</em><br>Stronger Days.</h1>
-    <p class="hero-sub">CELLFOOD® supports your body at the cellular level — delivering oxygen and nutrients to help you feel your best, every day. 50+ years of trust. 90+ countries.</p>
+    <span class="hero-badge">World's Only Liquid SAM-e Formula</span>
+    <h1 class="hero-headline">Joint Support.<br><em>Mood Enhancement.</em><br>Liver Health.</h1>
+    <p class="hero-sub">CELLFOOD® SAM-e is the first and only liquid SAM-e in the world — combining the clinically-recognized benefits of S-adenosyl methionine with CELLFOOD's unparalleled delivery system for superior absorption.</p>
+    <div class="hero-pillars">
+      <span class="pillar-tag">Joint Support</span>
+      <span class="pillar-tag">Mood Enhancement</span>
+      <span class="pillar-tag">Liver Health</span>
+    </div>
     <div class="offer-box">
       <div class="offer-price-row">
-        <span class="price-new">$23.76</span>
-        <span class="price-old">$27.95</span>
+        <span class="price-new">$27.41</span>
+        <span class="price-old">$32.25</span>
         <span class="price-save">Save 15%</span>
       </div>
       <div class="offer-code">Use code <strong>TRYCF15</strong> at checkout</div>
+      <div class="dosage-note">Suggested use: 10 drops directly in mouth, 2 times daily</div>
     </div>
     <a href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15"
        class="btn-primary">Claim 15% Off — Add to Cart</a>
     <div class="hero-trust">
-      <span>60-Day Guarantee</span>
+      <span>Only Liquid SAM-e in the World</span>
       <span>GMP Certified</span>
-      <span>Kosher Certified</span>
+      <span>Flexible Dosing</span>
     </div>
   </div>
 </section>
 
-<!-- SOCIAL PROOF BAR -->
+<!-- PROOF BAR -->
 <section class="proof-bar">
-  <div class="proof-stat"><span class="num">50+</span><span class="label">Years Trusted</span></div>
-  <div class="proof-stat"><span class="num">90+</span><span class="label">Countries Worldwide</span></div>
-  <div class="proof-stat"><span class="num">4.6★</span><span class="label">3,200+ Reviews</span></div>
-  <div class="proof-stat"><span class="num">#1</span><span class="label">Selling Oxygen Supplement</span></div>
+  <div class="proof-stat"><span class="num">Only</span><span class="label">Liquid SAM-e Worldwide</span></div>
+  <div class="proof-stat"><span class="num">3-in-1</span><span class="label">Joint, Mood & Liver</span></div>
+  <div class="proof-stat"><span class="num">50+</span><span class="label">Years of NuScience Trust</span></div>
+  <div class="proof-stat"><span class="num">Flexible</span><span class="label">Dosing — Drop by Drop</span></div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section section-center">
-  <div class="section-tag">How It Works</div>
-  <h2 class="section-headline">Cellular Support in Three Simple Steps</h2>
-  <p class="section-sub">CELLFOOD's proprietary formula works with your body's own chemistry — no stimulants, no fillers.</p>
-  <div class="how-grid">
-    <div class="how-card">
-      <div class="how-number">1</div>
-      <h3>Mix</h3>
-      <p>Add 8 drops to 8 oz of purified water or juice. Takes seconds — no prep, no mess.</p>
+<!-- DIFFERENTIATOR BANNER -->
+<div class="diff-banner">
+  <h2>Why Liquid SAM-e Matters</h2>
+  <p>Most SAM-e products are tablets or capsules — with absorption rates as low as 10–20%. CELLFOOD's liquid formula, delivered via our proprietary colloidal system, is designed for superior bioavailability. And because it's liquid, you control your exact dose — simply take fewer drops for a smaller serving. No breaking tablets. No guessing.</p>
+</div>
+
+<!-- 3 PILLARS -->
+<section class="section pillars-bg section-center">
+  <div class="section-tag">Three Core Benefits</div>
+  <h2 class="section-headline">What CELLFOOD SAM-e Does for Your Body</h2>
+  <p class="section-sub">SAM-e is a compound found naturally in every living cell. As we age, our bodies produce less of it — affecting joints, mood, and liver function. CELLFOOD SAM-e is formulated to address all three.</p>
+  <div class="pillars-grid">
+
+    <div class="pillar-card">
+      <div class="pillar-icon">🦵</div>
+      <h3>Joint Support</h3>
+      <p>SAM-e supports sulfate groups' absorption into glycoproteins — the building blocks that help maintain cartilage and protect joints. Cysteine and glutathione, potent health-optimizing compounds, are byproducts of this same process.</p>
+      <div class="mechanism">SAM-e → sulfate absorption → glycoprotein support → cartilage maintenance + joint protection</div>
     </div>
-    <div class="how-card">
-      <div class="how-number">2</div>
-      <h3>Absorb</h3>
-      <p>CELLFOOD's colloidal suspension mirrors the body's own fluids, supporting rapid absorption at the cellular level.</p>
+
+    <div class="pillar-card">
+      <div class="pillar-icon">🧠</div>
+      <h3>Mood Enhancement</h3>
+      <p>CELLFOOD SAM-e donates its methyl group to CNS receptors, increasing the activity and production of serotonin, dopamine, and norepinephrine — the neurotransmitters most closely associated with mood and emotional well-being.</p>
+      <div class="mechanism">SAM-e → methyl donation → CNS receptor activity → serotonin, dopamine & norepinephrine production</div>
     </div>
-    <div class="how-card">
-      <div class="how-number">3</div>
-      <h3>Feel the Difference</h3>
-      <p>Cascading oxygen and nutrient support works throughout the day — peaking within 8–12 hours and continuing hour after hour.</p>
+
+    <div class="pillar-card">
+      <div class="pillar-icon">🫀</div>
+      <h3>Liver Health</h3>
+      <p>In the liver, SAM-e is a necessary component in the creation of glutathione — the body's primary defense against toxin accumulation. CELLFOOD SAM-e supports GSH production and uptake, helping your liver maintain its natural detoxification processes.</p>
+      <div class="mechanism">SAM-e → glutathione (GSH) production & uptake → liver detoxification support</div>
     </div>
+
   </div>
 </section>
 
-<!-- BENEFITS -->
-<section class="section benefits-bg">
-  <div class="section-tag" style="display:block;text-align:center;margin-bottom:14px;">What You'll Notice</div>
-  <h2 class="section-headline" style="text-align:center;">Daily Support. Real Results.</h2>
-  <p class="section-sub" style="text-align:center;">CELLFOOD supports your body's natural systems — so you can keep doing what matters most.</p>
-  <div class="benefits-grid">
-    <div class="benefit-card">
-      <div class="benefit-icon">⚡</div>
-      <h3>Sustained Energy</h3>
-      <p>Supports cellular oxygen to help you maintain natural energy throughout the day — without the crash.</p>
-    </div>
-    <div class="benefit-card">
-      <div class="benefit-icon">🧠</div>
-      <h3>Mental Clarity</h3>
-      <p>When your cells are nourished and oxygenated, your mind follows. Sharper focus, less fog.</p>
-    </div>
-    <div class="benefit-card">
-      <div class="benefit-icon">💪</div>
-      <h3>Active Recovery</h3>
-      <p>In a University of Pretoria study, CELLFOOD was shown to increase VO2 Max and reduce lactic acid build-up — supporting faster recovery.*</p>
-    </div>
-    <div class="benefit-card">
-      <div class="benefit-icon">🛡️</div>
-      <h3>Immune Resilience</h3>
-      <p>By supporting your body at the cellular level, CELLFOOD helps your immune system maintain its natural defenses as part of your daily wellness routine.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SCIENCE SECTION -->
+<!-- LIQUID ADVANTAGE -->
 <section class="section">
-  <div class="science-grid">
-    <div class="science-stats">
-      <div class="stat-card">
-        <div class="stat-num">27%</div>
-        <div class="stat-label">Reduction in excess free radical activity in published research*</div>
+  <div class="liquid-section">
+    <div class="liquid-copy">
+      <h2>The World's Only Liquid SAM-e — and Why That's a Big Deal</h2>
+      <p>NuScience Corporation is the first and only laboratory in the world to liquify and stabilize SAM-e in a colloidal suspension — then combine it with CELLFOOD's delivery system. That distinction isn't just a marketing claim. It changes how your body receives the ingredient.</p>
+      <p>Tablet-based SAM-e must survive digestion before reaching the bloodstream. Liquid SAM-e, carried in CELLFOOD's colloidal suspension, is designed to be absorbed rapidly — and because the formula mirrors the body's own fluid chemistry, the delivery is efficient at the cellular level.</p>
+      <p>For those who need a smaller dose, there's no need to break tablets. Simply take fewer drops. Precise, flexible, and easy.</p>
+    </div>
+    <table class="compare-table">
+      <tr>
+        <th>Feature</th>
+        <th>CELLFOOD SAM-e</th>
+        <th>Tablet SAM-e</th>
+      </tr>
+      <tr>
+        <td>Form</td>
+        <td><span class="check">Liquid</span></td>
+        <td>Tablet / Capsule</td>
+      </tr>
+      <tr>
+        <td>Absorption</td>
+        <td><span class="check">Superior bioavailability</span></td>
+        <td>10–20% typical</td>
+      </tr>
+      <tr>
+        <td>Flexible Dosing</td>
+        <td><span class="check">Yes — drop by drop</span></td>
+        <td><span class="cross">Must split tablets</span></td>
+      </tr>
+      <tr>
+        <td>CELLFOOD Delivery</td>
+        <td><span class="check">Yes</span></td>
+        <td><span class="cross">No</span></td>
+      </tr>
+      <tr>
+        <td>Gluten-Free / Non-GMO</td>
+        <td><span class="check">Yes</span></td>
+        <td>Varies</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- DIRECTIONS -->
+<section class="section directions-bg section-center">
+  <div class="section-tag">Suggested Use</div>
+  <h2 class="section-headline">Simple. Precise. Flexible.</h2>
+  <div class="directions-box">
+    <h3>How to Take CELLFOOD® SAM-e</h3>
+    <div class="directions-steps">
+      <div class="direction-step">
+        <div class="d-num">10</div>
+        <p>drops directly in the mouth</p>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">30×</div>
-        <div class="stat-label">Higher biological antioxidant potential than normal human plasma (BAP value)*</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">VO2↑</div>
-        <div class="stat-label">Increased oxygen uptake shown in University of Pretoria athlete study*</div>
+      <div class="direction-step">
+        <div class="d-num">2×</div>
+        <p>times per day</p>
       </div>
     </div>
-    <div class="science-copy">
-      <h2>Backed by Research. Trusted by Athletes.</h2>
-      <p>CELLFOOD's proprietary formula has been the subject of independent research across three continents. Studies conducted at the University of Pretoria and the International Observatory of Oxidative Stress (Italy) have documented measurable effects on oxygen uptake, free radical activity, and antioxidant potential.</p>
-      <p>CELLFOOD contains no banned substances and is trusted by professional and amateur athletes worldwide. Gluten-free, non-GMO, Certified Kosher, and manufactured in an FDA-compliant, GMP-certified facility.</p>
-      <p class="cite">*These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure or prevent any disease.</p>
-    </div>
+    <p class="dosage-flex">Need a smaller dose? Simply take fewer drops. No tablets to split — just precise control, drop by drop.</p>
+    <p style="font-size:13px; color:var(--text); margin-top:16px; padding:12px 16px; background:var(--gray-light); border-radius:8px; line-height:1.6;"><strong>Caution:</strong> Individuals diagnosed with bipolar disorder or serotonin syndrome should consult with their professional healthcare practitioner prior to using any SAM-e product. If pregnant, nursing, or under medical care, please consult a health professional before use.</p>
   </div>
 </section>
 
 <!-- MID CTA -->
 <section class="mid-cta">
-  <h2>Ready to Feel the Difference?</h2>
-  <p>Try CELLFOOD® risk-free today. Use code TRYCF15 for 15% off your first order.</p>
+  <h2>The Only Liquid SAM-e in the World.</h2>
+  <p>Try CELLFOOD® SAM-e risk-free today. Use code TRYCF15 for 15% off your first order.</p>
   <a href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15"
      class="btn-white">Get 15% Off Today →</a>
 </section>
 
 <!-- REVIEWS -->
-<section class="section reviews-bg">
-  <div class="section-tag" style="display:block;text-align:center;margin-bottom:14px;">Real People. Real Results.</div>
-  <h2 class="section-headline" style="text-align:center;">What Our Customers Are Saying</h2>
+<section class="section reviews-bg section-center">
+  <div class="section-tag">Real Customers. Real Results.</div>
+  <h2 class="section-headline">What People Are Saying About CELLFOOD SAM-e</h2>
   <div class="reviews-grid">
     <div class="review-card">
       <div class="stars">★★★★★</div>
-      <p class="review-text">"I've tried many supplements over the years. CELLFOOD is the only one I notice when I stop taking it. More energy, clearer head. I've been on it for three years."</p>
-      <div class="reviewer">Margaret S. <span>— Verified Buyer</span></div>
+      <span class="review-focus">Mood Support</span>
+      <p class="review-text">"I can't do the pills, I've tried every kind they all mess up my stomach. This liquid version is potent and effective! I can feel the effects within 10 minutes of taking it. My mood is lighter and all the negative fades out. I recommended this to all my friends and now they all swear by it too!"</p>
+      <div class="reviewer">Bonnie <span>— Verified Buyer · Amazon</span></div>
     </div>
     <div class="review-card">
       <div class="stars">★★★★★</div>
-      <p class="review-text">"I was skeptical at first. 8 drops in water didn't seem like much. But after two weeks I started waking up without that mid-morning slump. Now my whole family uses it."</p>
-      <div class="reviewer">David R. <span>— Verified Buyer</span></div>
+      <span class="review-focus">Liquid Delivery & Results</span>
+      <p class="review-text">"The flavor isn't bad, but it also isn't flavorless... it's subtle, and with a sip of water after is no big deal. I wanted to wait until I used this product for a full month to ensure it was actually working and I wasn't just telling myself it was... and it does. I am so grateful for the simplicity and quality of this product."</p>
+      <div class="reviewer">Shannon M. <span>— Verified Buyer · Amazon</span></div>
     </div>
     <div class="review-card">
       <div class="stars">★★★★★</div>
-      <p class="review-text">"As a competitive runner I'm always looking for a legal edge. CELLFOOD is one of very few supplements I've actually felt working. Recovery time noticeably shorter."</p>
-      <div class="reviewer">James T. <span>— Verified Buyer</span></div>
+      <span class="review-focus">Joint Support</span>
+      <p class="review-text">"I'm an avid hiker and started taking CELLFOOD SAM-e to help with some post-hike joint stiffness. I feel less 'creaky' than I did before. I've been impressed with how it integrates joint support without me having to add a bunch of separate supplements."</p>
+      <div class="reviewer">Verified Customer <span>— Verified Buyer</span></div>
     </div>
   </div>
 </section>
@@ -619,37 +663,44 @@ footer a { color: rgba(255,255,255,0.5); text-decoration: underline; }
 </div>
 
 <!-- FAQ -->
-<section class="section">
-  <div class="section-tag" style="display:block;text-align:center;margin-bottom:14px;">Common Questions</div>
-  <h2 class="section-headline" style="text-align:center;">FAQ</h2>
+<section class="section section-center">
+  <div class="section-tag">Common Questions</div>
+  <h2 class="section-headline">FAQ</h2>
   <div class="faq-list">
     <div class="faq-item">
-      <button class="faq-q">How do I take CELLFOOD? <span class="arrow">▼</span></button>
-      <div class="faq-a">Mix 8 drops into 8 oz of purified water or juice. Take 3 times daily — morning, midday, and evening. For best results, avoid combining with carbonated beverages.</div>
+      <button class="faq-q">What makes CELLFOOD SAM-e different from tablet SAM-e? <span class="arrow">▼</span></button>
+      <div class="faq-a">CELLFOOD SAM-e is the only liquid SAM-e formula in the world. Tablet and capsule forms must pass through the digestive process before being absorbed, often with limited bioavailability. CELLFOOD's colloidal liquid delivery is designed for superior absorption, and the liquid format allows for precise, flexible dosing — no tablet-splitting required.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">How long until I notice results? <span class="arrow">▼</span></button>
-      <div class="faq-a">Most customers notice a difference within 2–4 weeks of consistent daily use. Some notice benefits sooner. We recommend at least 60 days to fully experience the cumulative effects.</div>
+      <button class="faq-q">How do I take it? <span class="arrow">▼</span></button>
+      <div class="faq-a">Take 10 drops directly in the mouth, 2 times per day. For those requiring a smaller dose, simply take fewer drops as needed. No water required.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">Is CELLFOOD safe to take with other supplements? <span class="arrow">▼</span></button>
-      <div class="faq-a">Yes. CELLFOOD's exceptional delivery system also enhances the absorption of other nutrients and supplements taken within the same 24-hour period. If you have specific medical conditions, consult your healthcare practitioner.</div>
+      <button class="faq-q">How does SAM-e support joint health? <span class="arrow">▼</span></button>
+      <div class="faq-a">SAM-e supports the absorption of sulfate groups into glycoproteins — structural proteins that help maintain cartilage and protect joints. Cysteine and glutathione, both potent health-supporting compounds, are produced as byproducts of this process.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">Is it certified and tested? <span class="arrow">▼</span></button>
-      <div class="faq-a">CELLFOOD is manufactured by NuScience Corporation in an FDA-compliant, GMP-certified facility, certified by the Natural Products Association. It is also Certified Kosher and contains no banned athletic substances.</div>
+      <button class="faq-q">How does it support mood? <span class="arrow">▼</span></button>
+      <div class="faq-a">CELLFOOD SAM-e works by donating its methyl group to CNS receptors, which increases the activity and production of serotonin, dopamine, and norepinephrine — the key neurotransmitters associated with mood regulation and emotional well-being.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">What is the return policy? <span class="arrow">▼</span></button>
-      <div class="faq-a">We stand behind every bottle. If you're not satisfied, contact our support team within 60 days of purchase.</div>
+      <button class="faq-q">What is SAM-e's role in liver health? <span class="arrow">▼</span></button>
+      <div class="faq-a">In the liver, SAM-e is a critical component in the production of glutathione (GSH) — the body's primary antioxidant for removing toxins. CELLFOOD SAM-e supports GSH production and uptake, helping the liver maintain its natural detoxification function. Adequate glutathione levels are especially important because the liver continuously processes toxins that can deplete GSH reserves.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Are there any cautions or contraindications? <span class="arrow">▼</span></button>
+      <div class="faq-a">
+        <strong style="color:var(--text);">Important:</strong> Individuals diagnosed with bipolar disorder or serotonin syndrome should consult with their professional healthcare practitioner prior to using any SAM-e product.<br><br>
+        If pregnant, nursing, or under medical care, please consult a health professional before use.
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <section class="final-cta">
-  <h2>Start Supporting Your Health Today</h2>
-  <p>Join hundreds of thousands of customers in 90+ countries who make CELLFOOD® part of their daily routine.</p>
+  <h2>The World's Only Liquid SAM-e — Now 15% Off</h2>
+  <p>Joint support. Mood enhancement. Liver health. All in one liquid formula only NuScience makes.</p>
   <div class="code-callout">Use code TRYCF15 · 15% Off Your First Order</div><br>
   <a href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15"
      class="btn-white">Claim 15% Off — Add to Cart →</a>
@@ -669,8 +720,7 @@ footer a { color: rgba(255,255,255,0.5); text-decoration: underline; }
 <script>
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
-    const item = btn.closest('.faq-item');
-    item.classList.toggle('open');
+    btn.closest('.faq-item').classList.toggle('open');
   });
 });
 </script>
