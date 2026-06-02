@@ -1,567 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CELLFOOD® SAM-e Formula — Official Site</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --navy:       #0055AA;
-      --navy-dark:  #003D80;
-      --gold:       #B8962E;
-      --gold-light: #D4AE52;
-      --cream:      #F8F9FC;
-      --white:      #FFFFFF;
-      --text:       #1A2744;
-      --text-mid:   #4A5568;
-      --text-light: #718096;
-      --trust-bg:   #EBF3FF;
-      --success:    #2D6A4F;
-      --ff-display: 'Playfair Display', Georgia, serif;
-      --ff-body:    'Inter', system-ui, sans-serif;
-      --radius:     8px;
-      --radius-lg:  16px;
-      --shadow:     0 4px 24px rgba(26,39,68,0.10);
-      --shadow-lg:  0 12px 48px rgba(26,39,68,0.16);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--ff-body); color: var(--text); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    img { display: block; max-width: 100%; }
-    a { text-decoration: none; color: inherit; }
-    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CELLFOOD® SAM-e | The World's Only Liquid SAM-e Formula</title>
+<style>
+/* ── BRAND TOKENS ───────────────────────────────────────── */
+:root {
+  --purple:      #595CFC;
+  --blue:        #37A8E4;
+  --blue-dark:   #0066CC;   /* placeholder – confirm with designer */
+  --gold:        #B8962E;   /* placeholder – confirm with designer */
+  --white:       #FFFFFF;
+  --off-white:   #F7F9FC;
+  --gray-light:  #EEF1F6;
+  --gray-mid:    #6B7280;
+  --text:        #1A1A2E;
+  --font:        Arial, Helvetica, sans-serif;
+}
 
-    /* PROMO BAR */
-    .promo-bar { background: #0055AA; color: #A8CCF0; text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; position: sticky; top: 0; z-index: 100; }
-    .promo-bar span { color: var(--white); font-weight: 400; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); color: var(--text); background: var(--white); font-size: 18px; line-height: 1.6; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
 
-    /* NAV */
-    .nav { background: var(--white); border-bottom: 1px solid #E2E8F0; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 39px; z-index: 99; }
-    .nav-logo-wrap { display:flex; align-items:center; }
-    
-    .nav-trust { font-size: 12px; color: var(--text-mid); display: flex; align-items: center; gap: 18px; }
-    .nav-cta { background: #0066CC; color: var(--white); font-weight: 700; font-size: 13px; padding: 10px 22px; border-radius: var(--radius); white-space: nowrap; transition: background 0.2s; }
-    .nav-cta:hover { background: #0055AA; }
+/* ── PROMO BAR ──────────────────────────────────────────── */
+.promo-bar {
+  background: var(--purple);
+  color: var(--white);
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.promo-bar span { color: #FFE066; }
 
-    /* HERO */
-    .hero { background: #ffffff; color: var(--text); padding: 72px 20px 80px; position: relative; overflow: hidden; border-bottom: 1px solid #EDF0F5; }
-    .hero::before { display: none; }
-    .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 460px; gap: 52px; align-items: center; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: #EBF3FF; border: 1px solid #B8D4F0; border-radius: 40px; padding: 6px 16px; font-size: 11px; font-weight: 600; color: #2277CC; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px; }
-    .hero-heading { font-family: var(--ff-display); font-size: clamp(30px, 4vw, 48px); font-weight: 900; line-height: 1.12; margin-bottom: 20px; color: var(--navy); }
-    .hero-heading em { color: #0066CC; font-style: normal; }
-    .hero-subhead { font-size: 16px; color: var(--text-mid); line-height: 1.65; margin-bottom: 20px; max-width: 500px; }
-    .hero-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px; }
-    .hero-bullets li { display: flex; align-items: flex-start; gap: 9px; font-size: 14px; color: var(--text-mid); }
-    .hero-bullets li::before { content: '✓'; color: #2277CC; font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+/* ── NAV ────────────────────────────────────────────────── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo img { height: 50px; }
+.nav-cta {
+  background: var(--purple);
+  color: var(--white);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.nav-cta:hover { background: #4346d4; }
 
-    /* ORDER CARD */
-    .order-card { background: #ffffff; border: 1px solid #E2ECF8; border-radius: var(--radius-lg); padding: 28px; box-shadow: 0 2px 16px rgba(27,59,107,0.08), 0 0 0 1px rgba(27,59,107,0.04); }
-    .oc-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #2277CC; margin-bottom: 4px; }
-    .oc-name { font-family: var(--ff-display); font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
-    .oc-sub { font-size: 12px; color: var(--text-light); margin-bottom: 18px; }
-    .oc-bottle { width: 100%; height: 120px; background: linear-gradient(160deg, #EDF5FF, #D8EAF8); border: 1px solid #C5DCEF; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; position: relative; }
-    .oc-bottle-text { text-align: center; }
-    .oc-bottle-name { font-family: var(--ff-display); font-size: 22px; font-weight: 900; color: #0055AA; letter-spacing: 0.06em; text-align: center; }
-    .oc-bottle-detail { font-size: 10px; color: #5A80A8; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px; text-align: center; }
-    .oc-badge { position: absolute; top: 8px; right: 8px; background: var(--gold); color: var(--white); font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 20px; }
-    .oc-price-row { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
-    .oc-was { font-size: 15px; text-decoration: line-through; color: #718096; }
-    .oc-now { font-size: 32px; font-weight: 700; color: #0055AA; font-family: var(--ff-display); line-height: 1; }
-    .oc-pill { background: #2277CC; color: var(--white); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 40px; }
-    .oc-code { font-size: 12px; color: #4A5568; margin-bottom: 12px; }
-    .oc-code strong { color: #2277CC; font-weight: 700; letter-spacing: 0.05em; }
-    .oc-value { font-size: 12px; color: #4A5568; margin-bottom: 18px; padding: 8px 12px; background: #F4F8FF; border-radius: 6px; border-left: 3px solid #2277CC; }
-    .btn-primary { display: block; width: 100%; background: #0066CC; color: var(--white); font-size: 15px; font-weight: 700; padding: 17px 28px; border-radius: var(--radius); text-align: center; border: none; cursor: pointer; transition: background 0.2s, transform 0.1s; letter-spacing: 0.02em; text-decoration: none; white-space: nowrap; }
-    .btn-primary:hover { background: #0055AA; transform: translateY(-1px); }
-    .btn-primary:active { transform: translateY(0); }
-    .oc-trust { display: flex; gap: 12px; margin-top: 11px; font-size: 11px; color: #718096; justify-content: center; flex-wrap: wrap; }
+/* ── HERO ───────────────────────────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 580px;
+  background: var(--off-white);
+}
+.hero-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  background: linear-gradient(135deg, #e8f4fd 0%, #f0effe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-image img {
+  width: 60%;
+  max-width: 280px;
+  object-fit: contain;
+}
+.hero-content {
+  padding: 48px 48px 48px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--purple);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+.hero-headline {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.hero-headline em { color: var(--purple); font-style: normal; }
+.hero-sub {
+  font-size: 16px;
+  color: var(--gray-mid);
+  margin-bottom: 24px;
+  line-height: 1.65;
+}
+.hero-pillars {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.pillar-tag {
+  background: var(--gray-light);
+  color: var(--purple);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+.offer-box {
+  background: var(--white);
+  border: 2px solid var(--purple);
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin-bottom: 20px;
+}
+.offer-price-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.price-new { font-size: 34px; font-weight: 700; color: var(--purple); }
+.price-old { font-size: 20px; color: var(--gray-mid); text-decoration: line-through; }
+.price-save {
+  background: #FFF3CD;
+  color: #856404;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.offer-code { font-size: 13px; color: var(--gray-mid); margin-top: 4px; }
+.offer-code strong { color: var(--purple); }
+.dosage-note {
+  font-size: 13px;
+  color: var(--gray-mid);
+  margin-top: 8px;
+  font-style: italic;
+}
+.btn-primary {
+  display: block;
+  width: 100%;
+  background: var(--purple);
+  color: var(--white);
+  border: none;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn-primary:hover { background: #4346d4; transform: translateY(-1px); }
+.hero-trust {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--gray-mid);
+  flex-wrap: wrap;
+}
+.hero-trust span::before { content: "✓  "; color: var(--blue); font-weight: 700; }
 
-    /* PROOF BAR */
-    .proof-bar { background: #0055AA; padding: 22px; }
-    .proof-bar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
-    .proof-stat { text-align: center; color: var(--white); }
-    .proof-num { font-family: var(--ff-display); font-size: 26px; font-weight: 700; color: var(--gold-light); display: block; line-height: 1; }
-    .proof-lbl { font-size: 10px; color: rgba(255,255,255,0.48); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px; }
-    .proof-div { width: 1px; height: 36px; background: rgba(255,255,255,0.13); }
+/* ── PROOF BAR ──────────────────────────────────────────── */
+.proof-bar {
+  background: var(--purple);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 22px 40px;
+  flex-wrap: wrap;
+}
+.proof-stat { text-align: center; }
+.proof-stat .num { font-size: 26px; font-weight: 700; display: block; }
+.proof-stat .label { font-size: 13px; opacity: 0.85; }
 
-    /* SECTIONS */
-    .section { padding: 80px 20px; }
-    .section-cream { background: #F8F9FC; }
-    .section-white { background: var(--white); }
-    .s-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #2277CC; margin-bottom: 12px; display: block; }
-    .s-head { font-family: var(--ff-display); font-size: clamp(24px, 3vw, 38px); font-weight: 700; line-height: 1.2; color: #1A2744; margin-bottom: 16px; }
-    .s-head.light { color: var(--white); }
-    .s-sub { font-size: 16px; color: var(--text-mid); max-width: 560px; line-height: 1.65; }
-    .s-sub.light { color: rgba(255,255,255,0.70); }
-    .center { text-align: center; margin-left: auto; margin-right: auto; }
+/* ── DIFFERENTIATOR BANNER ──────────────────────────────── */
+.diff-banner {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--purple) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 40px 40px;
+}
+.diff-banner h2 { font-size: 26px; font-weight: 700; margin-bottom: 10px; }
+.diff-banner p { font-size: 16px; opacity: 0.9; max-width: 640px; margin: 0 auto; line-height: 1.65; }
 
-    /* RESEARCH BAND */
-    .research-band { background: #E8F4FD; padding: 52px 20px; border-top: 1px solid #C8E4F5; border-bottom: 1px solid #C8E4F5; }
-    .research-grid { max-width: 960px; margin: 36px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-    .research-card { background: #ffffff; border: 1px solid #D0E8F5; padding: 28px 22px; text-align: center; box-shadow: 0 1px 6px rgba(1,100,180,0.06); }
-    .research-card:first-child { border-radius: var(--radius-lg) 0 0 var(--radius-lg); }
-    .research-card:last-child { border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
-    .research-num { font-family: var(--ff-display); font-size: 38px; font-weight: 900; color: #0055AA; line-height: 1; margin-bottom: 8px; }
-    .research-title { font-size: 13px; font-weight: 700; color: #1A2744; margin-bottom: 5px; line-height: 1.4; }
-    .research-source { font-size: 10px; color: #5A80A8; letter-spacing: 0.04em; line-height: 1.4; }
+/* ── SECTION ────────────────────────────────────────────── */
+.section { padding: 64px 40px; }
+.section-center { text-align: center; }
+.section-tag {
+  display: inline-block;
+  background: var(--gray-light);
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+.section-headline {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.section-sub {
+  font-size: 16px;
+  color: var(--gray-mid);
+  max-width: 620px;
+  margin: 0 auto 40px;
+  line-height: 1.65;
+}
 
-    /* PS GRID */
-    .ps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1000px; margin: 44px auto 0; }
-    .ps-card { border-radius: var(--radius-lg); padding: 32px; }
-    .ps-card.problem { background: #FEF7F7; border: 1px solid #F5DADA; }
-    .ps-card.solution { background: #F2FAF5; border: 1px solid #C2E0CF; }
-    .ps-clabel { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; display: block; }
-    .ps-card.problem .ps-clabel { color: #C0392B; }
-    .ps-card.solution .ps-clabel { color: var(--success); }
-    .ps-cheading { font-family: var(--ff-display); font-size: 19px; font-weight: 700; margin-bottom: 14px; color: var(--navy); }
-    .ps-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .ps-list li { display: flex; gap: 9px; font-size: 14px; color: var(--text-mid); align-items: flex-start; }
-    .ps-icon { font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+/* ── 3 PILLARS ──────────────────────────────────────────── */
+.pillars-bg { background: var(--off-white); }
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.pillar-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 36px 28px;
+  box-shadow: 0 2px 16px rgba(89,92,252,0.09);
+  border-top: 5px solid var(--purple);
+}
+.pillar-icon { font-size: 36px; margin-bottom: 16px; }
+.pillar-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--purple); }
+.pillar-card p { font-size: 15px; color: var(--gray-mid); line-height: 1.7; }
+.pillar-card .mechanism {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: var(--off-white);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.6;
+  font-style: italic;
+}
 
-    /* STEPS */
-    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 900px; margin: 44px auto 0; }
-    .step-card { text-align: center; padding: 24px 18px; }
-    .step-num { width: 50px; height: 50px; border-radius: 50%; background: #2277CC; color: var(--white); font-family: var(--ff-display); font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
-    .step-title { font-family: var(--ff-display); font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 7px; }
-    .step-desc { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+/* ── LIQUID ADVANTAGE ───────────────────────────────────── */
+.liquid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.liquid-copy h2 { font-size: 28px; font-weight: 700; margin-bottom: 16px; line-height: 1.3; }
+.liquid-copy p { font-size: 16px; color: var(--gray-mid); line-height: 1.7; margin-bottom: 14px; }
+.compare-table { border-collapse: collapse; width: 100%; font-size: 15px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+.compare-table th { background: var(--purple); color: var(--white); padding: 14px 18px; text-align: left; font-weight: 700; }
+.compare-table td { padding: 13px 18px; border-bottom: 1px solid var(--gray-light); }
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table tr:nth-child(even) td { background: var(--off-white); }
+.check { color: #16a34a; font-weight: 700; }
+.cross { color: #dc2626; }
 
-    /* BENEFITS */
-    .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 900px; margin: 44px auto 0; }
-    .benefit-card { background: #ffffff; border: 1px solid #E8EFF8; border-radius: var(--radius-lg); padding: 26px; display: flex; gap: 15px; align-items: flex-start; box-shadow: 0 1px 8px rgba(26,39,68,0.06); transition: box-shadow 0.2s; }
-    .benefit-icon { width: 44px; height: 44px; border-radius: var(--radius); background: var(--trust-bg); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-    .benefit-title { font-weight: 700; font-size: 15px; color: var(--navy); margin-bottom: 4px; }
-    .benefit-desc { font-size: 13px; color: var(--text-mid); line-height: 1.55; }
+/* ── DIRECTIONS ─────────────────────────────────────────── */
+.directions-bg { background: var(--off-white); }
+.directions-box {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 40px 48px;
+  box-shadow: 0 2px 16px rgba(89,92,252,0.09);
+  text-align: center;
+}
+.directions-box h3 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+.directions-steps { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; flex-wrap: wrap; }
+.direction-step { text-align: center; }
+.direction-step .d-num {
+  width: 56px; height: 56px;
+  background: var(--purple);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: 700;
+  margin: 0 auto 10px;
+}
+.direction-step p { font-size: 15px; color: var(--gray-mid); max-width: 140px; }
+.dosage-flex { font-size: 13px; color: var(--gray-mid); font-style: italic; }
 
-    /* ATHLETE */
-    .athlete-wrap { max-width: 820px; margin: 44px auto 0; background: #ffffff; border: 1px solid #E8EFF8; border-radius: var(--radius-lg); padding: 36px; box-shadow: 0 2px 16px rgba(26,39,68,0.06); display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
-    .athlete-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #2277CC; margin-bottom: 8px; }
-    .athlete-heading { font-family: var(--ff-display); font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
-    .athlete-body { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
-    .athlete-stats { display: flex; flex-direction: column; gap: 12px; }
-    .athlete-stat { background: #F8F9FC; border: 1px solid #E2E8F0; border-radius: var(--radius); padding: 14px 16px; }
-    .athlete-stat-num { font-family: var(--ff-display); font-size: 24px; font-weight: 700; color: #2277CC; line-height: 1; }
-    .athlete-stat-label { font-size: 12px; color: var(--text-mid); margin-top: 3px; line-height: 1.4; }
+/* ── MID CTA ────────────────────────────────────────────── */
+.mid-cta {
+  background: linear-gradient(135deg, var(--purple) 0%, var(--blue-dark) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 56px 40px;
+}
+.mid-cta h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+.mid-cta p { font-size: 16px; opacity: 0.9; margin-bottom: 28px; }
+.btn-white {
+  display: inline-block;
+  background: var(--white);
+  color: var(--purple);
+  padding: 15px 36px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--font);
+  text-decoration: none;
+  transition: transform 0.15s;
+}
+.btn-white:hover { transform: translateY(-2px); }
 
-    /* COMPARE */
-    .compare-wrap { max-width: 820px; margin: 44px auto 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
-    .compare-header { display: grid; grid-template-columns: 2fr 1fr 1fr; background: var(--navy-dark); color: var(--white); text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
-    .compare-header div { padding: 14px 10px; }
-    .compare-header .ch-cf { color: var(--gold-light); }
-    .compare-row { display: grid; grid-template-columns: 2fr 1fr 1fr; border-bottom: 1px solid #E8EDF5; font-size: 13px; }
-    .compare-row:last-child { border-bottom: none; }
-    .compare-row:nth-child(even) { background: #F8F9FC; }
-    .compare-row:nth-child(odd) { background: var(--white); }
-    .compare-row div { padding: 12px 16px; display: flex; align-items: center; }
-    .cr-label { font-weight: 500; color: var(--text); }
-    .cr-cf { justify-content: center; color: var(--success); font-weight: 700; }
-    .cr-other { justify-content: center; color: #C0392B; }
+/* ── REVIEWS ────────────────────────────────────────────── */
+.reviews-bg { background: var(--off-white); }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.review-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.stars { color: #F59E0B; font-size: 18px; margin-bottom: 12px; }
+.review-text { font-size: 15px; color: var(--text); line-height: 1.65; margin-bottom: 16px; font-style: italic; }
+.review-focus {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.reviewer { font-size: 14px; font-weight: 700; color: var(--gray-mid); }
+.reviewer span { color: var(--blue); font-weight: 400; font-size: 13px; }
 
-    /* MID CTA */
-    .cta-band { background: #0055AA; padding: 52px 20px; text-align: center; }
-    .cta-band-heading { font-family: var(--ff-display); font-size: clamp(22px, 2.8vw, 34px); font-weight: 900; color: var(--white); margin-bottom: 10px; }
-    .cta-band-sub { font-size: 15px; color: rgba(255,255,255,0.88); margin-bottom: 24px; }
-    .btn-white { display: inline-block; background: var(--white); color: #0066CC; font-weight: 700; font-size: 16px; padding: 15px 38px; border-radius: var(--radius); transition: background 0.2s; }
-    .btn-white:hover { background: var(--cream); }
+/* ── CERTS ──────────────────────────────────────────────── */
+.certs-bar {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid var(--gray-light);
+  border-bottom: 1px solid var(--gray-light);
+}
+.certs-bar p { font-size: 13px; color: var(--gray-mid); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.certs-logos { display: flex; justify-content: center; align-items: center; gap: 32px; flex-wrap: wrap; }
+.certs-logos img { height: 48px; opacity: 0.7; filter: grayscale(30%); }
 
-    /* CERTS */
-    .cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 960px; margin: 44px auto 0; }
-    .cert-card { background: #ffffff; border: 1px solid #E8EFF8; border-radius: var(--radius-lg); padding: 22px 14px; text-align: center; box-shadow: 0 1px 6px rgba(26,39,68,0.04); }
-    .cert-icon { font-size: 26px; margin-bottom: 7px; }
-    .cert-title { font-weight: 700; font-size: 12px; color: var(--navy); margin-bottom: 3px; line-height: 1.3; }
-    .cert-sub { font-size: 11px; color: var(--text-light); line-height: 1.4; margin-top: 2px; }
+/* ── FAQ ────────────────────────────────────────────────── */
+.faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item { border: 1px solid var(--gray-light); border-radius: 10px; overflow: hidden; }
+.faq-q {
+  width: 100%;
+  background: var(--white);
+  border: none;
+  text-align: left;
+  padding: 20px 24px;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text);
+}
+.faq-q .arrow { font-size: 18px; color: var(--purple); transition: transform 0.25s; }
+.faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; font-size: 16px; color: var(--gray-mid); line-height: 1.7; }
+.faq-item.open .faq-a { max-height: 300px; padding: 0 24px 20px; }
+.faq-item.open .faq-q .arrow { transform: rotate(180deg); }
 
-    /* REVIEWS */
-    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1100px; margin: 44px auto 0; }
-    .review-card { background: #ffffff; border: 1px solid #E8EFF8; border-radius: var(--radius-lg); padding: 26px; box-shadow: 0 1px 8px rgba(26,39,68,0.05); display: flex; flex-direction: column; }
-    .review-stars { color: var(--gold); font-size: 16px; margin-bottom: 10px; letter-spacing: 2px; }
-    .review-headline { font-weight: 700; font-size: 14px; color: var(--navy); margin-bottom: 8px; }
-    .review-quote { font-size: 13px; color: var(--text-mid); line-height: 1.65; font-style: italic; margin-bottom: 14px; flex: 1; }
-    .review-quote::before { content: '\201C'; }
-    .review-quote::after  { content: '\201D'; }
-    .review-author { font-weight: 700; font-size: 13px; color: var(--navy); }
-    .review-meta   { font-size: 11px; color: var(--text-light); margin-top: 1px; }
-    .review-verified { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--success); font-weight: 600; margin-top: 7px; }
+/* ── FINAL CTA ──────────────────────────────────────────── */
+.final-cta {
+  background: var(--purple);
+  color: var(--white);
+  text-align: center;
+  padding: 64px 40px;
+}
+.final-cta h2 { font-size: 30px; font-weight: 700; margin-bottom: 12px; }
+.final-cta p { font-size: 17px; opacity: 0.9; margin-bottom: 10px; }
+.final-cta .code-callout {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 6px;
+  padding: 6px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 28px;
+}
+.disclaimer { background: var(--gray-light); padding: 20px 40px; font-size: 12px; color: var(--gray-mid); text-align: center; line-height: 1.6; }
+footer { background: var(--text); color: rgba(255,255,255,0.6); text-align: center; padding: 28px 40px; font-size: 13px; line-height: 1.7; }
+footer a { color: rgba(255,255,255,0.5); text-decoration: underline; }
 
-    /* FAQ */
-    .faq-list { max-width: 720px; margin: 44px auto 0; border: 1px solid #E2E8F0; border-radius: var(--radius-lg); overflow: hidden; }
-    .faq-item { border-bottom: 1px solid #E2E8F0; }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-q { width: 100%; background: var(--white); border: none; text-align: left; padding: 18px 22px; font-size: 14px; font-weight: 600; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; transition: background 0.15s; }
-    .faq-q:hover { background: #F8F9FC; }
-    .faq-arrow { font-size: 18px; transition: transform 0.25s; flex-shrink: 0; color: #2277CC; }
-    .faq-q.open .faq-arrow { transform: rotate(45deg); }
-    .faq-a { display: none; padding: 0 22px 18px; font-size: 13px; color: var(--text-mid); line-height: 1.65; background: var(--white); }
-    .faq-a.open { display: block; }
-
-    /* FINAL CTA */
-    .final-cta { background: #0055AA; padding: 80px 20px; text-align: center; color: var(--white); }
-    .final-cta-form { max-width: 420px; margin: 0 auto; }
-    .final-cta-trust { display: flex; gap: 24px; justify-content: center; margin-top: 18px; font-size: 11px; color: rgba(255,255,255,0.42); flex-wrap: wrap; }
-    .final-cta-trust span { display: flex; align-items: center; gap: 4px; }
-
-    /* FOOTER */
-    .footer { background: #1A2744; color: rgba(255,255,255,0.42); text-align: center; padding: 32px 20px; font-size: 12px; line-height: 1.8; }
-    .footer a { color: rgba(255,255,255,0.38); text-decoration: underline; }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .nav-trust { display: none; }
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-inner > div:last-child { order: -1; }
-      .ps-grid, .steps-grid, .benefits-grid, .reviews-grid, .athlete-wrap { grid-template-columns: 1fr; }
-      .cert-grid { grid-template-columns: repeat(2, 1fr); }
-      .research-grid { grid-template-columns: 1fr; gap: 2px; }
-      .research-card:first-child { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
-      .research-card:last-child { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
-      .compare-header div:last-child, .compare-row div:last-child { display: none; }
-      .compare-header { grid-template-columns: 2fr 1fr; }
-      .compare-row { grid-template-columns: 2fr 1fr; }
-      .proof-div { display: none; }
-      .proof-bar-inner { gap: 18px; }
-    }
-  </style>
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  nav { padding: 12px 20px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-image { min-height: 260px; }
+  .hero-content { padding: 32px 20px; }
+  .hero-headline { font-size: 28px; }
+  .proof-bar { gap: 20px; padding: 20px; }
+  .section { padding: 48px 20px; }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .liquid-section { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .section-headline { font-size: 24px; }
+  .mid-cta, .final-cta { padding: 44px 20px; }
+  .directions-box { padding: 28px 20px; }
+  .hero-trust { flex-wrap: wrap; gap: 10px; }
+  .certs-logos img { height: 36px; }
+}
+</style>
 </head>
 <body>
 
-<div style="height:3px;background:linear-gradient(90deg,#2277CC,#7BB8E8,#2277CC);"></div>
 <!-- PROMO BAR -->
 <div class="promo-bar">
-  🎁 First Order: Code <strong>TRYCF15</strong> &nbsp;·&nbsp; <span>Save 15% on CELLFOOD SAM-e — Limited Time</span>
+  Limited Offer: Use code <span>TRYCF15</span> for 15% off your first order
 </div>
 
 <!-- NAV -->
-<nav class="nav">
-  <div class="nav-logo-wrap"><img src="data:image/jpeg;base64,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" alt="NuScience Corporation — Makers of CELLFOOD" style="height:48px; width:auto; display:block;" /></div>
-  <div class="nav-trust">
-    <span>⭐ 4.6 / 3,200+ Reviews</span>
-    <span>🌍 Trusted in 90+ Countries</span>
-    <span>✅ 7 Independent Certifications</span>
+<nav>
+  <div class="nav-logo">
+    <img src="https://nuscience.com/wp-content/uploads/NuScience-Corporation-Header-Image-340-250x86.png"
+         alt="NuScience Corporation" onerror="this.style.display='none'">
   </div>
-  <a class="nav-cta" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15" target="_blank">Try SAM-e →</a>
+  <a href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15"
+     class="nav-cta">Try It — 15% Off</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <!-- LEFT: Minimal copy -->
-    <div>
-      <div class="hero-eyebrow">⚗️ World's Only Liquid SAM-e</div>
-      <h1 class="hero-heading">
-        Joint health. Mood.<br>Liver support.<br>
-        <em>One liquid formula.</em>
-      </h1>
-      <p class="hero-subhead">
-        The first and only liquid SAM-e in the world — combined with CELLFOOD's proven delivery system for maximum absorption. No tablets. No guesswork.
-      </p>
-      <div style="display:flex; align-items:center; gap:16px; margin-bottom:28px; flex-wrap:wrap;">
-        <a class="btn-primary" style="width:auto; padding:16px 32px; font-size:15px;" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15" target="_blank">Try SAM-e — Save 15% →</a>
-        <div>
-          <div style="font-size:13px; color:var(--text-mid);"><del>$37.95</del> &nbsp;<strong style="color:#1A2744; font-size:18px;">$32.26</strong> <span style="background:#0066CC;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;margin-left:4px;">SAVE 15%</span></div>
-          <div style="font-size:11px;color:var(--text-light);margin-top:3px;">Code TRYCF15 · First purchase only</div>
-        </div>
-      </div>
-      <div style="display:flex; gap:20px; font-size:12px; color:var(--text-light); flex-wrap:wrap;">
-        <span>🔒 Secure Checkout</span>
-        <span>📦 Free Shipping</span>
-        <span>↩️ 30-Day Guarantee</span>
-      </div>
+  <div class="hero-image">
+    <img src="https://nuscience.com/wp-content/uploads/Cellfood-1oz-Bottle-149x450.jpg"
+         alt="CELLFOOD SAM-e Liquid Formula"
+         onerror="this.alt='CELLFOOD SAM-e'">
+  </div>
+  <div class="hero-content">
+    <span class="hero-badge">World's Only Liquid SAM-e Formula</span>
+    <h1 class="hero-headline">Joint Support.<br><em>Mood Enhancement.</em><br>Liver Health.</h1>
+    <p class="hero-sub">CELLFOOD® SAM-e is the first and only liquid SAM-e in the world — combining the clinically-recognized benefits of S-adenosyl methionine with CELLFOOD's unparalleled delivery system for superior absorption.</p>
+    <div class="hero-pillars">
+      <span class="pillar-tag">Joint Support</span>
+      <span class="pillar-tag">Mood Enhancement</span>
+      <span class="pillar-tag">Liver Health</span>
     </div>
-
-    <!-- RIGHT: Product image -->
-    <div id="order" style="border-radius:16px; overflow:hidden; box-shadow:0 4px 32px rgba(26,39,68,0.12); position:relative; max-width:480px;">
-      <img src="cellfood-same-hero.jpg" alt="CELLFOOD SAM-e — liquid formula with water splash" style="width:100%; display:block;" />
-
+    <div class="offer-box">
+      <div class="offer-price-row">
+        <span class="price-new">$27.41</span>
+        <span class="price-old">$32.25</span>
+        <span class="price-save">Save 15%</span>
+      </div>
+      <div class="offer-code">Use code <strong>TRYCF15</strong> at checkout</div>
+      <div class="dosage-note">Suggested use: 10 drops directly in mouth, 2 times daily</div>
+    </div>
+    <a href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15"
+       class="btn-primary">Claim 15% Off — Add to Cart</a>
+    <div class="hero-trust">
+      <span>Only Liquid SAM-e in the World</span>
+      <span>GMP Certified</span>
+      <span>Flexible Dosing</span>
     </div>
   </div>
 </section>
 
 <!-- PROOF BAR -->
-<div class="proof-bar">
-  <div class="proof-bar-inner">
-    <div class="proof-stat"><span class="proof-num">50+</span><div class="proof-lbl">Years Trusted</div></div>
-    <div class="proof-div"></div>
-    <div class="proof-stat"><span class="proof-num">90+</span><div class="proof-lbl">Countries</div></div>
-    <div class="proof-div"></div>
-    <div class="proof-stat"><span class="proof-num">4.6★</span><div class="proof-lbl">3,200+ Reviews</div></div>
-    <div class="proof-div"></div>
-    <div class="proof-stat"><span class="proof-num">#1</span><div class="proof-lbl">Liquid SAM-e Worldwide</div></div>
-    <div class="proof-div"></div>
-    <div class="proof-stat"><span class="proof-num">7</span><div class="proof-lbl">Quality Certifications</div></div>
-    <div class="proof-div"></div>
-    <div class="proof-stat"><span class="proof-num">8</span><div class="proof-lbl">Drops Per Day</div></div>
-  </div>
+<section class="proof-bar">
+  <div class="proof-stat"><span class="num">Only</span><span class="label">Liquid SAM-e Worldwide</span></div>
+  <div class="proof-stat"><span class="num">3-in-1</span><span class="label">Joint, Mood & Liver</span></div>
+  <div class="proof-stat"><span class="num">50+</span><span class="label">Years of NuScience Trust</span></div>
+  <div class="proof-stat"><span class="num">Flexible</span><span class="label">Dosing — Drop by Drop</span></div>
+</section>
+
+<!-- DIFFERENTIATOR BANNER -->
+<div class="diff-banner">
+  <h2>Why Liquid SAM-e Matters</h2>
+  <p>Most SAM-e products are tablets or capsules — with absorption rates as low as 10–20%. CELLFOOD's liquid formula, delivered via our proprietary colloidal system, is designed for superior bioavailability. And because it's liquid, you control your exact dose — simply take fewer drops for a smaller serving. No breaking tablets. No guessing.</p>
 </div>
 
-<!-- RESEARCH BAND -->
-<div class="research-band">
-  <div class="container">
-    <div style="text-align:center;">
-      <span class="s-label" style="color:var(--gold-light)">Independent Research</span>
-      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(22px,2.5vw,32px); font-weight:700; line-height:1.2; color:#1A2744; text-align:center; margin-bottom:0;">Why CELLFOOD SAM-e is unlike any other SAM-e supplement.</h2>
-    </div>
-    <div class="research-grid">
-      <div class="research-card">
-        <div class="research-num">Only</div>
-        <div class="research-title">Liquid SAM-e in the world — stable colloidal suspension technology</div>
-        <div class="research-source">NuScience Corporation · First &amp; Only U.S. Laboratory</div>
-      </div>
-      <div class="research-card">
-        <div class="research-num">3-in-1</div>
-        <div class="research-title">Supports joints, mood &amp; liver health simultaneously in one formula</div>
-        <div class="research-source">SAM-e Peer-Reviewed Research · Multiple Institutions</div>
-      </div>
-      <div class="research-card">
-        <div class="research-num">Liquid</div>
-        <div class="research-title">Delivery for precise flexible dosing — take fewer drops as needed, no tablet splitting</div>
-        <div class="research-source">CELLFOOD Colloidal Delivery System · Proprietary</div>
-      </div>
-    </div>
-    <p style="text-align:center; font-size:11px; color:rgba(255,255,255,0.25); margin-top:18px; max-width:600px; margin-left:auto; margin-right:auto;">These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
-  </div>
-</div>
+<!-- 3 PILLARS -->
+<section class="section pillars-bg section-center">
+  <div class="section-tag">Three Core Benefits</div>
+  <h2 class="section-headline">What CELLFOOD SAM-e Does for Your Body</h2>
+  <p class="section-sub">SAM-e is a compound found naturally in every living cell. As we age, our bodies produce less of it — affecting joints, mood, and liver function. CELLFOOD SAM-e is formulated to address all three.</p>
+  <div class="pillars-grid">
 
-<!-- PROBLEM / SOLUTION -->
-<section class="section section-cream">
-  <div class="container">
-    <span class="s-label center">The Real Problem</span>
-    <h2 class="s-head center">Sound familiar?</h2>
-    <div class="ps-grid">
-      <div class="ps-card problem">
-        <span class="ps-clabel">Sound familiar?</span>
-        <h3 class="ps-cheading">The problem with SAM-e tablets.</h3>
-        <ul class="ps-list">
-          <li><span class="ps-icon">😮‍💨</span>You're doing everything right — still exhausted by 2pm.</li>
-          <li><span class="ps-icon">💊</span>Swallowing handfuls of capsules that may or may not work.</li>
-          <li><span class="ps-icon">🔄</span>Every brand promises a "breakthrough" — usually just repackaged.</li>
-          <li><span class="ps-icon">💸</span>Spending money on things you can't tell are actually working.</li>
-          <li><span class="ps-icon">🌫️</span>Brain fog and slow recovery despite your best efforts.</li>
-        </ul>
-      </div>
-      <div class="ps-card solution">
-        <span class="ps-clabel">A different approach</span>
-        <h3 class="ps-cheading">Liquid delivery. Precise dosing. Maximum absorption.</h3>
-        <ul class="ps-list">
-          <li><span class="ps-icon">✅</span>World's only liquid SAM-e — better absorption than tablets.</li>
-          <li><span class="ps-icon">✅</span>Flexible liquid dosing — fewer drops when you need less.</li>
-          <li><span class="ps-icon">✅</span>CELLFOOD's delivery system works at the cellular level.</li>
-          <li><span class="ps-icon">✅</span>Supports joints, mood, and liver function — in one formula.</li>
-          <li><span class="ps-icon">✅</span>Gluten-Free, Kosher Certified, non-addictive liquid formula.</li>
-        </ul>
-      </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">🦵</div>
+      <h3>Joint Support</h3>
+      <p>SAM-e supports sulfate groups' absorption into glycoproteins — the building blocks that help maintain cartilage and protect joints. Cysteine and glutathione, potent health-optimizing compounds, are byproducts of this same process.</p>
+      <div class="mechanism">SAM-e → sulfate absorption → glycoprotein support → cartilage maintenance + joint protection</div>
     </div>
+
+    <div class="pillar-card">
+      <div class="pillar-icon">🧠</div>
+      <h3>Mood Enhancement</h3>
+      <p>CELLFOOD SAM-e donates its methyl group to CNS receptors, increasing the activity and production of serotonin, dopamine, and norepinephrine — the neurotransmitters most closely associated with mood and emotional well-being.</p>
+      <div class="mechanism">SAM-e → methyl donation → CNS receptor activity → serotonin, dopamine & norepinephrine production</div>
+    </div>
+
+    <div class="pillar-card">
+      <div class="pillar-icon">🫀</div>
+      <h3>Liver Health</h3>
+      <p>In the liver, SAM-e is a necessary component in the creation of glutathione — the body's primary defense against toxin accumulation. CELLFOOD SAM-e supports GSH production and uptake, helping your liver maintain its natural detoxification processes.</p>
+      <div class="mechanism">SAM-e → glutathione (GSH) production & uptake → liver detoxification support</div>
+    </div>
+
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section section-white">
-  <div class="container">
-    <span class="s-label center">Three Core Benefits</span>
-    <h2 class="s-head center">Three ways SAM-e<br>supports your body daily.</h2>
-    <p class="s-sub center">Joint health, mood support, and liver function — in one liquid formula.</p>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <div class="step-title">Joint Support</div>
-        <p class="step-desc">SAM-e supports sulfate absorption into glycoproteins that help maintain cartilage and protect joints — without relying on NSAIDs.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <div class="step-title">Add 8 Drops</div>
-        <p class="step-desc">Eight drops of CELLFOOD concentrate. That's the entire daily ritual. One 1 fl oz bottle makes over 22 quarts — a full 30-day supply.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <div class="step-title">Feel the Difference</div>
-        <p class="step-desc">Consistent daily use supports natural energy, mental clarity, immune resilience, and overall daily vitality over time.</p>
-      </div>
+<!-- LIQUID ADVANTAGE -->
+<section class="section">
+  <div class="liquid-section">
+    <div class="liquid-copy">
+      <h2>The World's Only Liquid SAM-e — and Why That's a Big Deal</h2>
+      <p>NuScience Corporation is the first and only laboratory in the world to liquify and stabilize SAM-e in a colloidal suspension — then combine it with CELLFOOD's delivery system. That distinction isn't just a marketing claim. It changes how your body receives the ingredient.</p>
+      <p>Tablet-based SAM-e must survive digestion before reaching the bloodstream. Liquid SAM-e, carried in CELLFOOD's colloidal suspension, is designed to be absorbed rapidly — and because the formula mirrors the body's own fluid chemistry, the delivery is efficient at the cellular level.</p>
+      <p>For those who need a smaller dose, there's no need to break tablets. Simply take fewer drops. Precise, flexible, and easy.</p>
     </div>
+    <table class="compare-table">
+      <tr>
+        <th>Feature</th>
+        <th>CELLFOOD SAM-e</th>
+        <th>Tablet SAM-e</th>
+      </tr>
+      <tr>
+        <td>Form</td>
+        <td><span class="check">Liquid</span></td>
+        <td>Tablet / Capsule</td>
+      </tr>
+      <tr>
+        <td>Absorption</td>
+        <td><span class="check">Superior bioavailability</span></td>
+        <td>10–20% typical</td>
+      </tr>
+      <tr>
+        <td>Flexible Dosing</td>
+        <td><span class="check">Yes — drop by drop</span></td>
+        <td><span class="cross">Must split tablets</span></td>
+      </tr>
+      <tr>
+        <td>CELLFOOD Delivery</td>
+        <td><span class="check">Yes</span></td>
+        <td><span class="cross">No</span></td>
+      </tr>
+      <tr>
+        <td>Gluten-Free / Non-GMO</td>
+        <td><span class="check">Yes</span></td>
+        <td>Varies</td>
+      </tr>
+    </table>
   </div>
 </section>
 
-<!-- BENEFITS -->
-<section class="section section-cream">
-  <div class="container">
-    <span class="s-label center">What CELLFOOD SAM-e Supports</span>
-    <h2 class="s-head center">Multiple benefits. One liquid formula.</h2>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">⚡</div>
-        <div>
-          <div class="benefit-title">Natural Energy &amp; Vitality</div>
-          <p class="benefit-desc">Supports all-day natural energy without stimulants, jitters, or a crash. Real energy — not borrowed time from caffeine.</p>
-        </div>
+<!-- DIRECTIONS -->
+<section class="section directions-bg section-center">
+  <div class="section-tag">Suggested Use</div>
+  <h2 class="section-headline">Simple. Precise. Flexible.</h2>
+  <div class="directions-box">
+    <h3>How to Take CELLFOOD® SAM-e</h3>
+    <div class="directions-steps">
+      <div class="direction-step">
+        <div class="d-num">10</div>
+        <p>drops directly in the mouth</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🧠</div>
-        <div>
-          <div class="benefit-title">Mental Clarity &amp; Focus</div>
-          <p class="benefit-desc">Supports mental alertness and cognitive clarity as part of a consistent daily wellness routine.</p>
-        </div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🛡️</div>
-        <div>
-          <div class="benefit-title">Immune Resilience</div>
-          <p class="benefit-desc">Supports immune function and natural defenses daily. Trusted by health-conscious adults in 90+ countries for 50+ years.</p>
-        </div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🔄</div>
-        <div>
-          <div class="benefit-title">Recovery &amp; Cellular Wellness</div>
-          <p class="benefit-desc">Supports your body at the cellular level throughout the day. Complements an active lifestyle and consistent daily routines.</p>
-        </div>
+      <div class="direction-step">
+        <div class="d-num">2×</div>
+        <p>times per day</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ATHLETE -->
-<section class="section section-white">
-  <div class="container">
-    <span class="s-label center">Clinical Research</span>
-    <h2 class="s-head center">Decades of SAM-e research behind every drop.</h2>
-    <div class="athlete-wrap">
-      <div>
-        <div class="athlete-label">Peer-Reviewed SAM-e Research</div>
-        <h3 class="athlete-heading">CELLFOOD has become the supplement of choice for many professional athletes.</h3>
-        <p class="athlete-body">In a study conducted at the University of Pretoria, CELLFOOD was shown to support key athletic performance markers. Notably, CELLFOOD contains no ingredients on the banned substances lists for professional or amateur competitions. It is non-addictive, non-invasive, and non-toxic when taken as directed.</p>
-      </div>
-      <div class="athlete-stats">
-        <div class="athlete-stat">
-          <div class="athlete-stat-num">VO₂ Max ↑</div>
-          <div class="athlete-stat-label">Increased oxygen uptake observed in University of Pretoria participants</div>
-        </div>
-        <div class="athlete-stat">
-          <div class="athlete-stat-num">Ferritin ↑</div>
-          <div class="athlete-stat-label">Improved iron storage (ferritin levels) noted in study</div>
-        </div>
-        <div class="athlete-stat">
-          <div class="athlete-stat-num">Lactic Acid ↓</div>
-          <div class="athlete-stat-label">Decreased lactic acid (muscular fatigue marker) observed</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARISON -->
-<section class="section section-cream">
-  <div class="container">
-    <span class="s-label center">How We Compare</span>
-    <h2 class="s-head center">Not every supplement is created equal.</h2>
-    <p class="s-sub center">CELLFOOD has spent 50 years building what most brands are still trying to claim.</p>
-    <div class="compare-wrap">
-      <div class="compare-header">
-        <div></div>
-        <div class="ch-cf">CELLFOOD®</div>
-        <div>Typical Supplements</div>
-      </div>
-      <div class="compare-row"><div class="cr-label">Proprietary formula unchanged for 50+ years</div><div class="cr-cf">✓</div><div class="cr-other">✗</div></div>
-      <div class="compare-row"><div class="cr-label">World's #1 selling O₂ + nutrient supplement</div><div class="cr-cf">✓</div><div class="cr-other">✗</div></div>
-      <div class="compare-row"><div class="cr-label">Trusted in 90+ countries globally</div><div class="cr-cf">✓</div><div class="cr-other">✗</div></div>
-      <div class="compare-row"><div class="cr-label">Liquid drops — no pills, no powder</div><div class="cr-cf">✓</div><div class="cr-other">✗</div></div>
-      <div class="compare-row"><div class="cr-label">1 bottle makes 22+ quarts (30-day supply)</div><div class="cr-cf">✓</div><div class="cr-other">✗</div></div>
-      <div class="compare-row"><div class="cr-label">Non-addictive, non-invasive, non-toxic formula</div><div class="cr-cf">✓</div><div class="cr-other">Varies</div></div>
-      <div class="compare-row"><div class="cr-label">7 independent quality certifications</div><div class="cr-cf">✓</div><div class="cr-other">Rarely</div></div>
-    </div>
+    <p class="dosage-flex">Need a smaller dose? Simply take fewer drops. No tablets to split — just precise control, drop by drop.</p>
+    <p style="font-size:13px; color:var(--text); margin-top:16px; padding:12px 16px; background:var(--gray-light); border-radius:8px; line-height:1.6;"><strong>Caution:</strong> Individuals diagnosed with bipolar disorder or serotonin syndrome should consult with their professional healthcare practitioner prior to using any SAM-e product. If pregnant, nursing, or under medical care, please consult a health professional before use.</p>
   </div>
 </section>
 
 <!-- MID CTA -->
-<div class="cta-band">
-  <div class="container">
-    <h2 class="cta-band-heading">The world's only liquid SAM-e formula.</h2>
-    <p class="cta-band-sub">Try CELLFOOD SAM-e for the first time and save 15% — use code TRYCF15 at checkout.</p>
-    <a class="btn-white" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15" target="_blank">Try CELLFOOD Today →</a>
-  </div>
-</div>
-
-<!-- CERTIFICATIONS -->
-<section class="section section-white">
-  <div class="container">
-    <span class="s-label center">Quality &amp; Certifications</span>
-    <h2 class="s-head center">Seven independent quality certifications.</h2>
-    <p class="s-sub center">Manufactured to the highest independent standards in the supplement industry.</p>
-    <div class="cert-grid">
-      <div class="cert-card"><div class="cert-icon">🏭</div><div class="cert-title">FDA Registered Facility</div><p class="cert-sub">FDA Registered, California State Licensed manufacturing</p></div>
-      <div class="cert-card"><div class="cert-icon">✅</div><div class="cert-title">cGMP / NPA Certified</div><p class="cert-sub">NPA GMP Certified · NPA 2026 Member</p></div>
-      <div class="cert-card"><div class="cert-icon">🏅</div><div class="cert-title">ANAB Accredited</div><p class="cert-sub">ANAB Management Systems Certification Body</p></div>
-      <div class="cert-card"><div class="cert-icon">✡️</div><div class="cert-title">Kosher LA Certified</div><p class="cert-sub">Kosher Certified · Gluten-Free formula</p></div>
-      <div class="cert-card"><div class="cert-icon">🔬</div><div class="cert-title">UL Certified</div><p class="cert-sub">UL Management System quality assurance certification</p></div>
-      <div class="cert-card"><div class="cert-icon">🌐</div><div class="cert-title">IAF Recognized</div><p class="cert-sub">International Accreditation Forum recognition</p></div>
-      <div class="cert-card"><div class="cert-icon">📋</div><div class="cert-title">ANSI Accredited</div><p class="cert-sub">American National Standards Institute accreditation</p></div>
-      <div class="cert-card"><div class="cert-icon">🌿</div><div class="cert-title">Natural Products Assoc.</div><p class="cert-sub">90-Year NPA member · highest industry standards</p></div>
-    </div>
-  </div>
+<section class="mid-cta">
+  <h2>The Only Liquid SAM-e in the World.</h2>
+  <p>Try CELLFOOD® SAM-e risk-free today. Use code TRYCF15 for 15% off your first order.</p>
+  <a href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15"
+     class="btn-white">Get 15% Off Today →</a>
 </section>
 
 <!-- REVIEWS -->
-<section class="section section-cream">
-  <div class="container">
-    <span class="s-label center">Real Customers</span>
-    <h2 class="s-head center">4.6 stars from 3,200+ verified reviews.</h2>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-headline">Worth Every Penny</div>
-        <p class="review-quote">I'm 36 and have gone my whole life not knowing what it's like to wake up feeling refreshed. I turn into the Energizer Bunny. Going all day, not tired. Not wired, not jittery. I just have energy and mental clarity and I open my eyes in the morning.</p>
-        <div class="review-author">Ecnarf</div>
-        <div class="review-meta">Verified Amazon Purchase · 527 people found this helpful</div>
-        <div class="review-verified">✓ Verified Buyer</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-headline">Been Using It for Many Decades</div>
-        <p class="review-quote">I've been using Cellfood off and on for many decades. Hadn't used it in a while, came across this on Amazon and it reminded me to order. It gave me energy and I experienced positive results. I'm already planning to reorder.</p>
-        <div class="review-author">Mbuzz</div>
-        <div class="review-meta">Verified Purchase · January 2026</div>
-        <div class="review-verified">✓ Verified Buyer</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-headline">Feeling 50 Years Old at 60</div>
-        <p class="review-quote">I love the product. I was so bone-tired before I started taking it. With the Cellfood I see an improvement — I'm able to get up, get my work done, feeling much better. Feeling 50 years old at 60 is not too bad.</p>
-        <div class="review-author">Debra L. Anderson</div>
-        <div class="review-meta">Verified Purchase · Long-term user</div>
-        <div class="review-verified">✓ Verified Buyer</div>
-      </div>
+<section class="section reviews-bg section-center">
+  <div class="section-tag">Real Customers. Real Results.</div>
+  <h2 class="section-headline">What People Are Saying About CELLFOOD SAM-e</h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <span class="review-focus">Mood Support</span>
+      <p class="review-text">"I can't do the pills, I've tried every kind they all mess up my stomach. This liquid version is potent and effective! I can feel the effects within 10 minutes of taking it. My mood is lighter and all the negative fades out. I recommended this to all my friends and now they all swear by it too!"</p>
+      <div class="reviewer">Bonnie <span>— Verified Buyer · Amazon</span></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <span class="review-focus">Liquid Delivery & Results</span>
+      <p class="review-text">"The flavor isn't bad, but it also isn't flavorless... it's subtle, and with a sip of water after is no big deal. I wanted to wait until I used this product for a full month to ensure it was actually working and I wasn't just telling myself it was... and it does. I am so grateful for the simplicity and quality of this product."</p>
+      <div class="reviewer">Shannon M. <span>— Verified Buyer · Amazon</span></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <span class="review-focus">Joint Support</span>
+      <p class="review-text">"I'm an avid hiker and started taking CELLFOOD SAM-e to help with some post-hike joint stiffness. I feel less 'creaky' than I did before. I've been impressed with how it integrates joint support without me having to add a bunch of separate supplements."</p>
+      <div class="reviewer">Verified Customer <span>— Verified Buyer</span></div>
     </div>
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
+<div class="certs-bar">
+  <p>Manufactured to the Highest Standards</p>
+  <div class="certs-logos">
+    <img src="https://nuscience.com/wp-content/uploads/Natural-Products-Association-GMP-certified-logo.png" alt="GMP Certified" onerror="this.style.display='none'">
+    <img src="https://nuscience.com/wp-content/uploads/ANAB-Management-Systems-Certifcation-Logo.png" alt="ANAB Certified" onerror="this.style.display='none'">
+    <img src="https://nuscience.com/wp-content/uploads/Kosher-LA-250x333.png" alt="Kosher Certified" onerror="this.style.display='none'">
+    <img src="https://nuscience.com/wp-content/uploads/ul-certified-logo-250x284.png" alt="UL Certified" onerror="this.style.display='none'">
+    <img src="https://nuscience.com/wp-content/uploads/logo_ansi_alt-250x157.png" alt="ANSI Accredited" onerror="this.style.display='none'">
+  </div>
+</div>
+
 <!-- FAQ -->
-<section class="section section-white">
-  <div class="container">
-    <span class="s-label center">Questions Answered</span>
-    <h2 class="s-head center">What people ask before trying CELLFOOD.</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFAQ(this)">What exactly is CELLFOOD SAM-e and how is it different?<span class="faq-arrow">+</span></button>
-        <div class="faq-a">CELLFOOD is the original liquid oxygen + nutrient supplement, formulated in 1969 by Everett Storey. It's a proprietary liquid concentrate you add to any water — just 8 drops per day. Unlike powders, capsules, or greens drinks, there's nothing to mix or measure beyond those 8 drops. The formula has never changed in over 50 years because NuScience Corporation is formulation-first — not marketing-first. It is the world's #1 selling oxygen + nutrient supplement, trusted in 90+ countries.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFAQ(this)">Why liquid SAM-e instead of tablets?<span class="faq-arrow">+</span></button>
-        <div class="faq-a">CELLFOOD is a concentrate. At the recommended serving of 8 drops, a single 1 fl oz bottle makes over 22 quarts of supplement-enriched water — a full 30-day supply. That works out to less than a dollar a day. You are not paying for water, fillers, or packaging — you are paying for a highly concentrated proprietary formula.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFAQ(this)">What does SAM-e actually do in the body?<span class="faq-arrow">+</span></button>
-        <div class="faq-a">Because it didn't need to. Most supplement brands reformulate every few years to chase trends. NuScience Corporation is a family-owned, formulation-first company. The proprietary CELLFOOD formula has proven effective across 50+ years and 90+ countries. Consistency IS the brand promise.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFAQ(this)">Is CELLFOOD safe? What certifications does it have?<span class="faq-arrow">+</span></button>
-        <div class="faq-a">CELLFOOD is manufactured in an FDA Registered, California State Licensed facility with 7 independent certifications: NPA cGMP, ANAB, ANSI, IAF, Kosher LA, UL Certified, and NPA membership. It is Gluten-Free, Kosher Certified, non-addictive, non-invasive, and non-toxic when taken as directed. Consult your healthcare provider if you have existing medical conditions or take prescription medications.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFAQ(this)">Is there anyone who should not take CELLFOOD SAM-e?<span class="faq-arrow">+</span></button>
-        <div class="faq-a">Individual results vary. Some customers notice a difference within the first few days. Others experience more gradual support over weeks of consistent use. CELLFOOD is a supplement, not a pharmaceutical — and we're transparent about that. The customers who see the best results use it consistently as part of a daily morning routine.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFAQ(this)">What is the discount code and how does it work?<span class="faq-arrow">+</span></button>
-        <div class="faq-a">Use code <strong>TRYCF15</strong> at checkout for 15% off your first purchase. This is a one-time use code for new customers only, valid for a limited time. Regular price is $27.95. With the discount, your first bottle is $23.76 — plus free U.S. shipping. No subscription required.</div>
+<section class="section section-center">
+  <div class="section-tag">Common Questions</div>
+  <h2 class="section-headline">FAQ</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">What makes CELLFOOD SAM-e different from tablet SAM-e? <span class="arrow">▼</span></button>
+      <div class="faq-a">CELLFOOD SAM-e is the only liquid SAM-e formula in the world. Tablet and capsule forms must pass through the digestive process before being absorbed, often with limited bioavailability. CELLFOOD's colloidal liquid delivery is designed for superior absorption, and the liquid format allows for precise, flexible dosing — no tablet-splitting required.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How do I take it? <span class="arrow">▼</span></button>
+      <div class="faq-a">Take 10 drops directly in the mouth, 2 times per day. For those requiring a smaller dose, simply take fewer drops as needed. No water required.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How does SAM-e support joint health? <span class="arrow">▼</span></button>
+      <div class="faq-a">SAM-e supports the absorption of sulfate groups into glycoproteins — structural proteins that help maintain cartilage and protect joints. Cysteine and glutathione, both potent health-supporting compounds, are produced as byproducts of this process.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How does it support mood? <span class="arrow">▼</span></button>
+      <div class="faq-a">CELLFOOD SAM-e works by donating its methyl group to CNS receptors, which increases the activity and production of serotonin, dopamine, and norepinephrine — the key neurotransmitters associated with mood regulation and emotional well-being.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What is SAM-e's role in liver health? <span class="arrow">▼</span></button>
+      <div class="faq-a">In the liver, SAM-e is a critical component in the production of glutathione (GSH) — the body's primary antioxidant for removing toxins. CELLFOOD SAM-e supports GSH production and uptake, helping the liver maintain its natural detoxification function. Adequate glutathione levels are especially important because the liver continuously processes toxins that can deplete GSH reserves.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Are there any cautions or contraindications? <span class="arrow">▼</span></button>
+      <div class="faq-a">
+        <strong style="color:var(--text);">Important:</strong> Individuals diagnosed with bipolar disorder or serotonin syndrome should consult with their professional healthcare practitioner prior to using any SAM-e product.<br><br>
+        If pregnant, nursing, or under medical care, please consult a health professional before use.
       </div>
     </div>
   </div>
@@ -569,46 +695,30 @@
 
 <!-- FINAL CTA -->
 <section class="final-cta">
-  <div class="container">
-    <span class="s-label center" style="color:var(--gold-light)">Start Today</span>
-    <h2 class="s-head center" style="font-size:clamp(26px,3vw,42px); color:#ffffff;">
-      The world's only liquid SAM-e.<br>Joint health. Mood. Liver support.<br>
-      <span style="color:var(--gold-light);">Start your daily ritual.</span>
-    </h2>
-    <p class="s-sub light center" style="margin: 0 auto 32px; color:rgba(255,255,255,0.80);">
-      First purchase: use code <strong style="color:var(--gold-light)">TRYCF15</strong> for 15% off your $37.95 bottle. One-time use. Free U.S. shipping included.
-    </p>
-    <div class="final-cta-form">
-      <a class="btn-primary" href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15" target="_blank" style="font-size:17px; padding:20px 32px;">Try SAM-e — Save 15% →</a>
-    </div>
-    <div class="final-cta-trust">
-      <span>🔒 Secure Checkout</span>
-      <span>📦 Free U.S. Shipping</span>
-      <span>↩️ 30-Day Guarantee</span>
-      <span>🏭 FDA Registered Facility</span>
-    </div>
-  </div>
+  <h2>The World's Only Liquid SAM-e — Now 15% Off</h2>
+  <p>Joint support. Mood enhancement. Liver health. All in one liquid formula only NuScience makes.</p>
+  <div class="code-callout">Use code TRYCF15 · 15% Off Your First Order</div><br>
+  <a href="https://nuscience.com/checkout/?line_items%5B0%5D%5Bprice_id%5D=d4e7fe8a-4053-48ec-ad77-e5ee58321688&line_items%5B0%5D%5Bquantity%5D=1&no_cart=1&coupon=TRYCF15"
+     class="btn-white">Claim 15% Off — Add to Cart →</a>
 </section>
 
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease. If under medical care, or if pregnant or nursing, please consult a health professional.
+</div>
+
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div style="margin-bottom:16px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 434.25 45" style="height:32px;width:auto;opacity:0.85;"><defs><style>.a{fill:#ffffff;}</style></defs><title>Artboard 2</title><path class="a" d="M60.24,1.6h43V8.86h-31v8.88h28.35v7.14H72.28V35.62h32.47v7.72H60.24Z"/><path class="a" d="M114.07,1.6h12.2v34H155.2v7.72H114.07Z"/><path class="a" d="M161.87,1.6h12.2v34H203v7.72H161.87Z"/><path class="a" d="M209.68,1.6h41.37V8.86H221.71v9.46h25.72v7.26H221.71V43.34h-12Z"/><path class="a" d="M283.28.5c17.72,0,29,8.53,29,22s-11.29,22-29,22-28.93-8.53-28.93-22S265.56.5,283.28.5Zm0,36.51c10.39,0,16.65-5.22,16.65-14.51S293.67,8,283.28,8,266.8,13.21,266.8,22.5,273,37,283.28,37Z"/><path class="a" d="M346.25.5c17.72,0,29,8.53,29,22s-11.29,22-29,22-28.93-8.53-28.93-22S328.53.5,346.25.5Zm0,36.51c10.39,0,16.65-5.22,16.65-14.51S356.64,8,346.25,8s-16.48,5.22-16.48,14.51S336,37,346.25,37Z"/><path class="a" d="M382.85,1.6h23.24c18.13,0,27,6.8,27,20.9,0,7.78-3.47,13.64-9.65,17.12-5.77,3.25-12.2,3.72-20.69,3.72H382.85Zm21.76,34.19c11.29,0,16.07-3.89,16.07-13.29S416.15,8.92,406.09,8.92H394.8V35.79Z"/><path class="a" d="M39.45,35.77H28.16c-10.06,0-14.59-4.29-14.59-13.58S18.35,8.9,29.64,8.9h8v0H51.4v0h0V1.35H31.46c-8.49,0-14.92.47-20.69,3.72C4.59,8.55,1.13,14.41,1.13,22.19c0,14.1,8.9,20.9,27,20.9H51.4V35.76H39.45Z"/></svg></div>
-    <p>FDA Registered · cGMP / NPA Certified · ANAB Accredited · ANSI Accredited · UL Certified · Kosher LA · IAF Recognized</p>
-    <p style="margin-top:12px; max-width:680px; margin-left:auto; margin-right:auto;">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. If under medical care, or if pregnant or nursing, please consult a health professional. Individual results may vary.</p>
-    <p style="margin-top:10px;"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Use</a> &nbsp;·&nbsp; <a href="#">Contact Us</a> &nbsp;·&nbsp; <a href="#">Cellfood Research</a></p>
-    <p style="margin-top:8px;">© 2026 NuScience Corporation. All Rights Reserved.</p>
-  </div>
+<footer>
+  <p>&copy; 2026 NuScience Corporation. All Rights Reserved. &nbsp;|&nbsp; <a href="https://nuscience.com">NuScience.com</a></p>
+  <p style="margin-top:8px;">CELLFOOD® is a registered trademark of NuScience Corporation.</p>
 </footer>
 
 <script>
-  function toggleFAQ(btn) {
-    const answer = btn.nextElementSibling;
-    const isOpen = answer.classList.contains('open');
-    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
-    document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
-    if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
-  }
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.faq-item').classList.toggle('open');
+  });
+});
 </script>
 </body>
 </html>
